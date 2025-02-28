@@ -34,12 +34,16 @@
 
         'views/document_agency_level.xml',
         'views/document_external_agency.xml',
+        'views/document_field.xml',
         'views/document_internal_department.xml',
         'views/document_job_position.xml',
         'views/document_priority_level.xml',
         'views/document_public_holiday.xml',
         'views/document_register.xml',
-        
+        'views/document_security_level.xml',
+        'views/document_type.xml',
+        'views/document_year.xml',
+
         'views/menu.xml',
     ],
     # only loaded in demonstration mode

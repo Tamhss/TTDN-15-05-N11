@@ -10,91 +10,91 @@
         <menuitem name="Văn bản đi" 
             id="menu_document_outgoing" 
             parent="menu_root" 
-            sequence="2"
+            sequence="1"
             action="action_document_outgoing"
         />
 
         <menuitem name="Văn bản đến" 
             id="menu_document_incoming" 
             parent="menu_root" 
-            sequence="1"
+            sequence="2"
             action="action_document_incoming"
         />
 
         <menuitem name="Danh mục" 
-            id="menu_document_management" 
+            id="menu_document_category" 
             parent="menu_root" 
             sequence="3"
         />
 
         <!-- #region Danh mục -->
-        <menuitem name="cấp cơ quan" 
+        <menuitem name="Cấp cơ quan" 
             id="menu_document_agency_level" 
-            parent="menu_document_management" 
+            parent="menu_document_category" 
             sequence="1"
             action="action_document_agency_level"
         />
 
-        <menuitem name="cơ quan" 
+        <menuitem name="Cơ quan" 
             id="menu_document_external_agency" 
-            parent="menu_document_management" 
-            sequence="1"
+            parent="menu_document_category" 
+            sequence="2"
             action="action_document_external_agency"
         />
 
         <menuitem name="Lĩnh vực" 
             id="menu_document_field" 
-            parent="menu_document_management" 
-            sequence="1"
+            parent="menu_document_category" 
+            sequence="3"
             action="action_document_field"
         />
 
         <menuitem name="Đơn vị" 
             id="menu_document_internal_department" 
-            parent="menu_document_management" 
-            sequence="1"
+            parent="menu_document_category" 
+            sequence="4"
             action="action_document_internal_department"
         />
 
         <menuitem name="Chức vụ" 
             id="menu_document_job_position" 
-            parent="menu_document_management" 
-            sequence="1"
+            parent="menu_document_category" 
+            sequence="5"
             action="action_document_job_position"
         />
 
         <menuitem name="Độ khẩn" 
             id="menu_document_priority_level" 
-            parent="menu_document_management" 
-            sequence="1"
+            parent="menu_document_category" 
+            sequence="6"
             action="action_document_priority_level"
         />
 
         <menuitem name="Ngày lễ" 
             id="menu_document_public_holiday" 
-            parent="menu_document_management" 
-            sequence="1"
+            parent="menu_document_category" 
+            sequence="7"
             action="action_document_public_holiday"
         />
 
         <menuitem name="Độ mật" 
             id="menu_document_security_level" 
-            parent="menu_document_management" 
-            sequence="1"
+            parent="menu_document_category" 
+            sequence="8"
             action="action_document_security_level"
         />
 
-        <menuitem name="loại văn bản" 
+        <menuitem name="Loại văn bản" 
             id="menu_document_type" 
-            parent="menu_document_management" 
-            sequence="1"
+            parent="menu_document_category" 
+            sequence="9"
             action="action_document_type"
         />
 
         <menuitem name="Năm" 
             id="menu_document_year" 
-            parent="menu_document_management" 
-            sequence="1"
+            parent="menu_document_category" 
+            sequence="10"
             action="action_document_year"
         />
         <!-- #endregion -->
