@@ -1,0 +1,36 @@
+<odoo>
+    <record id="view_document_external_agency_form" model="ir.ui.view">
+        <field name="name">document_external_agency_form</field>
+        <field name="model">document_external_agency</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <field name="level_id"/>
+                        <field name="address"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_document_external_agency_tree" model="ir.ui.view">
+        <field name="name">document_external_agency_tree</field>
+        <field name="model">document_external_agency</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="level_id"/>
+                <field name="address"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_document_external_agency" model="ir.actions.act_window">
+        <field name="name">Cơ quan ngoài</field>
+        <field name="res_model">document_external_agency</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

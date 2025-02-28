@@ -1,0 +1,33 @@
+<odoo>
+    <record id="view_document_register_form" model="ir.ui.view">
+        <field name="name">document_register_form</field>
+        <field name="model">document_register</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_document_register_tree" model="ir.ui.view">
+        <field name="name">document_register_tree</field>
+        <field name="model">document_register</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_document_register" model="ir.actions.act_window">
+        <field name="name">Sổ văn bản</field>
+        <field name="res_model">document_register</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
