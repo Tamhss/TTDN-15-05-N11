@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Form View -->
+        <record id="view_document_category_form" model="ir.ui.view">
+            <field name="name">document_category.form</field>
+            <field name="model">document_category</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="2" string="Thông tin danh mục">
+                            <field name="name"/>
+                            <field name="description" widget="text"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <!-- Tree View -->
+        <record id="view_document_category_tree" model="ir.ui.view">
+            <field name="name">document_category.tree</field>
+            <field name="model">document_category</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- Search View -->
+        <record id="document_category_search" model="ir.ui.view">
+            <field name="name">document_category.search</field>
+            <field name="model">document_category</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="description"/>
+                </search>
+            </field>
+        </record>
+        
+        <!-- Action Window -->
+        <record id="action_document_category" model="ir.actions.act_window">
+            <field name="name">Danh mục tài liệu</field>
+            <field name="res_model">document_category</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="document_category_search"/>
+        </record>
+    </data>
+</odoo>

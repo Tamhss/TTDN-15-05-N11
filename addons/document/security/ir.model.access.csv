@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_document_incoming,document_incoming.document_incoming,model_document_incoming,base.group_user,1,1,1,1
+access_document_outgoing,document_outgoing.document_outgoing,model_document_outgoing,base.group_user,1,1,1,1
+access_document_category,document_category.document_category,model_document_category,base.group_user,1,1,1,1
+access_document_sign,document_sign.document_sign,model_document_sign,base.group_user,1,1,1,1
+access_document_workflow,document_workflow.document_workflow,model_document_workflow,base.group_user,1,1,1,1
+access_document_report,document_report.document_report,model_document_report,base.group_user,1,1,1,1
+
+

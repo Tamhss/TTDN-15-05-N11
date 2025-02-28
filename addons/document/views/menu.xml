@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem
+            id="menu_root"
+            name="QLVB"
+            sequence="0"/>
+          
+        <menuitem name="Văn bản đến" 
+            id="menu_document_incoming" 
+            parent="menu_root" 
+            sequence="1"
+            action="action_document_incoming"
+        />
+
+        <menuitem name="Văn bản đi" 
+            id="menu_document_outgoing" 
+            parent="menu_root" 
+            sequence="1"
+            action="action_document_outgoing"
+        />
+
+        <menuitem name="Danh mục văn bản" 
+            id="menu_document_category" 
+            parent="menu_root" 
+            sequence="1"
+            action="action_document_category"
+        />
+
+        <menuitem name="Trạng thái xử lý" 
+            id="menu_document_workflow" 
+            parent="menu_root" 
+            sequence="1"
+            action="action_document_workflow"
+        />
+        <menuitem name="Chữ ký số" 
+            id="menu_document_sign" 
+            parent="menu_root" 
+            sequence="1"
+            action="action_document_sign"
+        />
+        <menuitem name="Báo cáo văn bản" 
+            id="menu_document_report" 
+            parent="menu_root" 
+            sequence="1"
+            action="action_document_report"
+        />
+    </data>
+</odoo>

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "nhan_su",
+    'name': "Quản lý văn bản",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -25,7 +25,12 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/nhan_vien.xml',
+        'views/document_category.xml',
+        'views/document_incoming.xml',
+        'views/document_outgoing.xml',
+        'views/document_report.xml',
+        'views/document_sign.xml',
+        'views/document_workflow.xml',
         'views/menu.xml',
     ],
     # only loaded in demonstration mode
