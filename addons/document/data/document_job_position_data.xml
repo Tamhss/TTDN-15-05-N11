@@ -1,0 +1,84 @@
+<odoo>
+  <data noupdate="1">
+    <record id="document_job_position_1" model="document_job_position">
+      <field name="name">Giám đốc</field>
+      <field name="description">Chức vụ cao nhất</field>
+    </record>
+    <record id="document_job_position_2" model="document_job_position">
+      <field name="name">Trưởng phòng</field>
+      <field name="description">Chức vụ quản lý phòng ban</field>
+    </record>
+    <record id="document_job_position_3" model="document_job_position">
+      <field name="name">Phó Giám đốc</field>
+      <field name="description">Chức vụ hỗ trợ Giám đốc</field>
+    </record>
+    <record id="document_job_position_4" model="document_job_position">
+      <field name="name">Giám đốc tài chính</field>
+      <field name="description">Quản lý tài chính doanh nghiệp</field>
+    </record>
+    <record id="document_job_position_5" model="document_job_position">
+      <field name="name">Giám đốc điều hành</field>
+      <field name="description">Chịu trách nhiệm điều hành doanh nghiệp</field>
+    </record>
+    <record id="document_job_position_6" model="document_job_position">
+      <field name="name">Giám đốc kỹ thuật</field>
+      <field name="description">Quản lý mảng kỹ thuật</field>
+    </record>
+    <record id="document_job_position_7" model="document_job_position">
+      <field name="name">Giám đốc nhân sự</field>
+      <field name="description">Quản lý nguồn nhân lực</field>
+    </record>
+    <record id="document_job_position_8" model="document_job_position">
+      <field name="name">Giám đốc kinh doanh</field>
+      <field name="description">Quản lý hoạt động kinh doanh</field>
+    </record>
+    <record id="document_job_position_9" model="document_job_position">
+      <field name="name">Giám đốc tiếp thị</field>
+      <field name="description">Quản lý chiến lược tiếp thị</field>
+    </record>
+    <record id="document_job_position_10" model="document_job_position">
+      <field name="name">Chuyên viên nhân sự</field>
+      <field name="description">Quản lý tuyển dụng và đào tạo</field>
+    </record>
+    <record id="document_job_position_11" model="document_job_position">
+      <field name="name">Chuyên viên kế toán</field>
+      <field name="description">Phụ trách kế toán tài chính</field>
+    </record>
+    <record id="document_job_position_12" model="document_job_position">
+      <field name="name">Chuyên viên pháp lý</field>
+      <field name="description">Hỗ trợ pháp luật cho doanh nghiệp</field>
+    </record>
+    <record id="document_job_position_13" model="document_job_position">
+      <field name="name">Chuyên viên IT</field>
+      <field name="description">Quản lý hệ thống CNTT</field>
+    </record>
+    <record id="document_job_position_14" model="document_job_position">
+      <field name="name">Chuyên viên quan hệ khách hàng</field>
+      <field name="description">Xử lý các mối quan hệ khách hàng</field>
+    </record>
+    <record id="document_job_position_15" model="document_job_position">
+      <field name="name">Chuyên viên kiểm toán</field>
+      <field name="description">Giám sát tài chính</field>
+    </record>
+    <record id="document_job_position_16" model="document_job_position">
+      <field name="name">Chuyên viên nghiên cứu thị trường</field>
+      <field name="description">Phân tích và nghiên cứu thị trường</field>
+    </record>
+    <record id="document_job_position_17" model="document_job_position">
+      <field name="name">Chuyên viên sản xuất</field>
+      <field name="description">Quản lý sản xuất</field>
+    </record>
+    <record id="document_job_position_18" model="document_job_position">
+      <field name="name">Nhân viên hành chính</field>
+      <field name="description">Hỗ trợ hành chính</field>
+    </record>
+    <record id="document_job_position_19" model="document_job_position">
+      <field name="name">Nhân viên hỗ trợ kỹ thuật</field>
+      <field name="description">Hỗ trợ kỹ thuật nội bộ</field>
+    </record>
+    <record id="document_job_position_20" model="document_job_position">
+      <field name="name">Nhân viên kinh doanh</field>
+      <field name="description">Phụ trách bán hàng và kinh doanh</field>
+    </record>
+  </data>
+</odoo>

@@ -2,9 +2,7 @@
 {
     'name': "Quản lý văn bản",
 
-    'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+    'summary': """Hệ thống quản lý văn bản và điều hành""",
 
     'description': """
         Long description of module's purpose
@@ -24,7 +22,25 @@
 
     # always loaded
     'data': [
+        # security
         'security/ir.model.access.csv',
+
+        # seed data
+        'data/document_agency_level_data.xml',
+        'data/document_external_agency_data.xml',
+        'data/document_field_data.xml',
+        'data/document_internal_department_data.xml',
+        'data/document_job_position_data.xml',
+        'data/document_priority_level_data.xml',
+        'data/document_security_level_data.xml',
+        'data/document_public_holiday_data.xml',
+        'data/document_register_data.xml',
+        'data/document_type_data.xml',
+        'data/document_year.xml',
+        # seq
+        'data/seq/document_seq.xml',
+
+        # view
         'views/document_category.xml',
         'views/document_incoming.xml',
         'views/document_outgoing.xml',

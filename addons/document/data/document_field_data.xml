@@ -1,0 +1,104 @@
+<odoo>
+  <data noupdate="1">
+    <record id="document_field_1" model="document_field">
+      <field name="name">Hành chính</field>
+      <field name="short_name">HC</field>
+      <field name="description">Lĩnh vực hành chính</field>
+    </record>
+    <record id="document_field_2" model="document_field">
+      <field name="name">Kinh tế</field>
+      <field name="short_name">KT</field>
+      <field name="description">Lĩnh vực kinh tế</field>
+    </record>
+    <record id="document_field_3" model="document_field">
+      <field name="name">Giáo dục</field>
+      <field name="short_name">GD</field>
+      <field name="description">Lĩnh vực giáo dục</field>
+    </record>
+    <record id="document_field_4" model="document_field">
+      <field name="name">Y tế</field>
+      <field name="short_name">YT</field>
+      <field name="description">Lĩnh vực y tế</field>
+    </record>
+    <record id="document_field_5" model="document_field">
+      <field name="name">Công nghệ</field>
+      <field name="short_name">CN</field>
+      <field name="description">Lĩnh vực công nghệ</field>
+    </record>
+    <record id="document_field_6" model="document_field">
+      <field name="name">Môi trường</field>
+      <field name="short_name">MT</field>
+      <field name="description">Lĩnh vực môi trường</field>
+    </record>
+    <record id="document_field_7" model="document_field">
+      <field name="name">Pháp luật</field>
+      <field name="short_name">PL</field>
+      <field name="description">Lĩnh vực pháp luật</field>
+    </record>
+    <record id="document_field_8" model="document_field">
+      <field name="name">Giao thông</field>
+      <field name="short_name">GT</field>
+      <field name="description">Lĩnh vực giao thông</field>
+    </record>
+    <record id="document_field_9" model="document_field">
+      <field name="name">Quốc phòng</field>
+      <field name="short_name">QP</field>
+      <field name="description">Lĩnh vực quốc phòng</field>
+    </record>
+    <record id="document_field_10" model="document_field">
+      <field name="name">An ninh</field>
+      <field name="short_name">AN</field>
+      <field name="description">Lĩnh vực an ninh</field>
+    </record>
+    <record id="document_field_11" model="document_field">
+      <field name="name">Du lịch</field>
+      <field name="short_name">DL</field>
+      <field name="description">Lĩnh vực du lịch</field>
+    </record>
+    <record id="document_field_12" model="document_field">
+      <field name="name">Nông nghiệp</field>
+      <field name="short_name">NN</field>
+      <field name="description">Lĩnh vực nông nghiệp</field>
+    </record>
+    <record id="document_field_13" model="document_field">
+      <field name="name">Thể thao</field>
+      <field name="short_name">TT</field>
+      <field name="description">Lĩnh vực thể thao</field>
+    </record>
+    <record id="document_field_14" model="document_field">
+      <field name="name">Xây dựng</field>
+      <field name="short_name">XD</field>
+      <field name="description">Lĩnh vực xây dựng</field>
+    </record>
+    <record id="document_field_15" model="document_field">
+      <field name="name">Năng lượng</field>
+      <field name="short_name">NL</field>
+      <field name="description">Lĩnh vực năng lượng</field>
+    </record>
+    <record id="document_field_16" model="document_field">
+      <field name="name">Văn hóa</field>
+      <field name="short_name">VH</field>
+      <field name="description">Lĩnh vực văn hóa</field>
+    </record>
+    <record id="document_field_17" model="document_field">
+      <field name="name">Xuất nhập khẩu</field>
+      <field name="short_name">XNK</field>
+      <field name="description">Lĩnh vực xuất nhập khẩu</field>
+    </record>
+    <record id="document_field_18" model="document_field">
+      <field name="name">Bảo hiểm</field>
+      <field name="short_name">BH</field>
+      <field name="description">Lĩnh vực bảo hiểm</field>
+    </record>
+    <record id="document_field_19" model="document_field">
+      <field name="name">Viễn thông</field>
+      <field name="short_name">VT</field>
+      <field name="description">Lĩnh vực viễn thông</field>
+    </record>
+    <record id="document_field_20" model="document_field">
+      <field name="name">Tài chính</field>
+      <field name="short_name">TC</field>
+      <field name="description">Lĩnh vực tài chính</field>
+    </record>
+  </data>
+</odoo>

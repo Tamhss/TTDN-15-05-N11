@@ -1,0 +1,104 @@
+<odoo>
+  <data noupdate="1">
+    <record id="document_type_1" model="document_type">
+      <field name="name">Thông báo</field>
+      <field name="short_name">TB</field>
+      <field name="processing_deadline">3</field>
+    </record>
+    <record id="document_type_2" model="document_type">
+      <field name="name">Quyết định</field>
+      <field name="short_name">QD</field>
+      <field name="processing_deadline">7</field>
+    </record>
+    <record id="document_type_3" model="document_type">
+      <field name="name">Công văn</field>
+      <field name="short_name">CV</field>
+      <field name="processing_deadline">5</field>
+    </record>
+    <record id="document_type_4" model="document_type">
+      <field name="name">Hướng dẫn</field>
+      <field name="short_name">HD</field>
+      <field name="processing_deadline">4</field>
+    </record>
+    <record id="document_type_5" model="document_type">
+      <field name="name">Nghị quyết</field>
+      <field name="short_name">NQ</field>
+      <field name="processing_deadline">10</field>
+    </record>
+    <record id="document_type_6" model="document_type">
+      <field name="name">Báo cáo</field>
+      <field name="short_name">BC</field>
+      <field name="processing_deadline">6</field>
+    </record>
+    <record id="document_type_7" model="document_type">
+      <field name="name">Tờ trình</field>
+      <field name="short_name">TT</field>
+      <field name="processing_deadline">8</field>
+    </record>
+    <record id="document_type_8" model="document_type">
+      <field name="name">Chỉ thị</field>
+      <field name="short_name">CT</field>
+      <field name="processing_deadline">12</field>
+    </record>
+    <record id="document_type_9" model="document_type">
+      <field name="name">Đề án</field>
+      <field name="short_name">DA</field>
+      <field name="processing_deadline">15</field>
+    </record>
+    <record id="document_type_10" model="document_type">
+      <field name="name">Kế hoạch</field>
+      <field name="short_name">KH</field>
+      <field name="processing_deadline">9</field>
+    </record>
+    <record id="document_type_11" model="document_type">
+      <field name="name">Biên bản</field>
+      <field name="short_name">BB</field>
+      <field name="processing_deadline">2</field>
+    </record>
+    <record id="document_type_12" model="document_type">
+      <field name="name">Giấy mời</field>
+      <field name="short_name">GM</field>
+      <field name="processing_deadline">1</field>
+    </record>
+    <record id="document_type_13" model="document_type">
+      <field name="name">Hợp đồng</field>
+      <field name="short_name">HD</field>
+      <field name="processing_deadline">14</field>
+    </record>
+    <record id="document_type_14" model="document_type">
+      <field name="name">Thỏa thuận</field>
+      <field name="short_name">TT</field>
+      <field name="processing_deadline">7</field>
+    </record>
+    <record id="document_type_15" model="document_type">
+      <field name="name">Lệnh điều động</field>
+      <field name="short_name">LD</field>
+      <field name="processing_deadline">5</field>
+    </record>
+    <record id="document_type_16" model="document_type">
+      <field name="name">Thông tư</field>
+      <field name="short_name">TT</field>
+      <field name="processing_deadline">11</field>
+    </record>
+    <record id="document_type_17" model="document_type">
+      <field name="name">Quy chế</field>
+      <field name="short_name">QC</field>
+      <field name="processing_deadline">8</field>
+    </record>
+    <record id="document_type_18" model="document_type">
+      <field name="name">Cẩm nang</field>
+      <field name="short_name">CN</field>
+      <field name="processing_deadline">6</field>
+    </record>
+    <record id="document_type_19" model="document_type">
+      <field name="name">Định hướng</field>
+      <field name="short_name">DH</field>
+      <field name="processing_deadline">7</field>
+    </record>
+    <record id="document_type_20" model="document_type">
+      <field name="name">Cảnh báo</field>
+      <field name="short_name">CB</field>
+      <field name="processing_deadline">3</field>
+    </record>
+  </data>
+</odoo>

@@ -1,0 +1,143 @@
+<odoo>
+  <data noupdate="1">
+    <record id="document_external_agency_1" model="document_external_agency">
+      <field name="name">Bộ Ngoại giao</field>
+      <field name="description">Cơ quan quản lý quan hệ quốc tế</field>
+      <field name="level_id" ref="document_agency_level_1"/>
+      <field name="address">Hà Nội</field>
+    </record>
+
+    <record id="document_external_agency_2" model="document_external_agency">
+      <field name="name">Bộ Tài chính</field>
+      <field name="description">Cơ quan quản lý tài chính</field>
+      <field name="level_id" ref="document_agency_level_2"/>
+      <field name="address">Hà Nội</field>
+    </record>
+
+    <record id="document_external_agency_3" model="document_external_agency">
+      <field name="name">Bộ Công an</field>
+      <field name="description">Cơ quan bảo đảm an ninh, trật tự</field>
+      <field name="level_id" ref="document_agency_level_1"/>
+      <field name="address">Hà Nội</field>
+    </record>
+
+    <record id="document_external_agency_4" model="document_external_agency">
+      <field name="name">Bộ Quốc phòng</field>
+      <field name="description">Cơ quan quản lý quân đội</field>
+      <field name="level_id" ref="document_agency_level_1"/>
+      <field name="address">Hà Nội</field>
+    </record>
+
+    <record id="document_external_agency_5" model="document_external_agency">
+      <field name="name">Bộ Y tế</field>
+      <field name="description">Cơ quan quản lý y tế</field>
+      <field name="level_id" ref="document_agency_level_2"/>
+      <field name="address">Hà Nội</field>
+    </record>
+
+    <record id="document_external_agency_6" model="document_external_agency">
+      <field name="name">Bộ Giáo dục và Đào tạo</field>
+      <field name="description">Cơ quan quản lý giáo dục</field>
+      <field name="level_id" ref="document_agency_level_2"/>
+      <field name="address">Hà Nội</field>
+    </record>
+
+    <record id="document_external_agency_7" model="document_external_agency">
+      <field name="name">Bộ Giao thông Vận tải</field>
+      <field name="description">Cơ quan quản lý giao thông</field>
+      <field name="level_id" ref="document_agency_level_2"/>
+      <field name="address">Hà Nội</field>
+    </record>
+
+    <record id="document_external_agency_8" model="document_external_agency">
+      <field name="name">Bộ Lao động - Thương binh và Xã hội</field>
+      <field name="description">Cơ quan quản lý lao động và an sinh xã hội</field>
+      <field name="level_id" ref="document_agency_level_3"/>
+      <field name="address">Hà Nội</field>
+    </record>
+
+    <record id="document_external_agency_9" model="document_external_agency">
+      <field name="name">Bộ Nông nghiệp và Phát triển Nông thôn</field>
+      <field name="description">Cơ quan quản lý nông nghiệp</field>
+      <field name="level_id" ref="document_agency_level_3"/>
+      <field name="address">Hà Nội</field>
+    </record>
+
+    <record id="document_external_agency_10" model="document_external_agency">
+      <field name="name">Bộ Công Thương</field>
+      <field name="description">Cơ quan quản lý công nghiệp và thương mại</field>
+      <field name="level_id" ref="document_agency_level_2"/>
+      <field name="address">Hà Nội</field>
+    </record>
+
+    <record id="document_external_agency_11" model="document_external_agency">
+      <field name="name">Bộ Tài nguyên và Môi trường</field>
+      <field name="description">Cơ quan quản lý tài nguyên và môi trường</field>
+      <field name="level_id" ref="document_agency_level_3"/>
+      <field name="address">Hà Nội</field>
+    </record>
+
+    <record id="document_external_agency_12" model="document_external_agency">
+      <field name="name">Bộ Khoa học và Công nghệ</field>
+      <field name="description">Cơ quan quản lý khoa học và công nghệ</field>
+      <field name="level_id" ref="document_agency_level_2"/>
+      <field name="address">Hà Nội</field>
+    </record>
+
+    <record id="document_external_agency_13" model="document_external_agency">
+      <field name="name">Bộ Văn hóa, Thể thao và Du lịch</field>
+      <field name="description">Cơ quan quản lý văn hóa, thể thao và du lịch</field>
+      <field name="level_id" ref="document_agency_level_3"/>
+      <field name="address">Hà Nội</field>
+    </record>
+
+    <record id="document_external_agency_14" model="document_external_agency">
+      <field name="name">Bộ Xây dựng</field>
+      <field name="description">Cơ quan quản lý xây dựng</field>
+      <field name="level_id" ref="document_agency_level_2"/>
+      <field name="address">Hà Nội</field>
+    </record>
+
+    <record id="document_external_agency_15" model="document_external_agency">
+      <field name="name">Bộ Thông tin và Truyền thông</field>
+      <field name="description">Cơ quan quản lý thông tin và truyền thông</field>
+      <field name="level_id" ref="document_agency_level_2"/>
+      <field name="address">Hà Nội</field>
+    </record>
+
+    <record id="document_external_agency_16" model="document_external_agency">
+      <field name="name">Bộ Nội vụ</field>
+      <field name="description">Cơ quan quản lý hành chính nhà nước</field>
+      <field name="level_id" ref="document_agency_level_3"/>
+      <field name="address">Hà Nội</field>
+    </record>
+
+    <record id="document_external_agency_17" model="document_external_agency">
+      <field name="name">Bộ Kế hoạch và Đầu tư</field>
+      <field name="description">Cơ quan quản lý kế hoạch và đầu tư</field>
+      <field name="level_id" ref="document_agency_level_2"/>
+      <field name="address">Hà Nội</field>
+    </record>
+
+    <record id="document_external_agency_18" model="document_external_agency">
+      <field name="name">Văn phòng Chính phủ</field>
+      <field name="description">Cơ quan giúp việc cho Chính phủ</field>
+      <field name="level_id" ref="document_agency_level_1"/>
+      <field name="address">Hà Nội</field>
+    </record>
+
+    <record id="document_external_agency_19" model="document_external_agency">
+      <field name="name">Thanh tra Chính phủ</field>
+      <field name="description">Cơ quan thanh tra và giải quyết khiếu nại</field>
+      <field name="level_id" ref="document_agency_level_2"/>
+      <field name="address">Hà Nội</field>
+    </record>
+
+    <record id="document_external_agency_20" model="document_external_agency">
+      <field name="name">Ngân hàng Nhà nước Việt Nam</field>
+      <field name="description">Cơ quan quản lý tiền tệ và ngân hàng</field>
+      <field name="level_id" ref="document_agency_level_1"/>
+      <field name="address">Hà Nội</field>
+    </record>
+  </data>
+</odoo>

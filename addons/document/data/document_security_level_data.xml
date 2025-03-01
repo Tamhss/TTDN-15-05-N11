@@ -1,0 +1,84 @@
+<odoo>
+  <data noupdate="1">
+    <record id="document_security_level_1" model="document_security_level">
+      <field name="name">Bí mật</field>
+      <field name="description">Dành cho thông tin bí mật</field>
+    </record>
+    <record id="document_security_level_2" model="document_security_level">
+      <field name="name">Thông thường</field>
+      <field name="description">Không yêu cầu bảo mật cao</field>
+    </record>
+    <record id="document_security_level_3" model="document_security_level">
+      <field name="name">Tối mật</field>
+      <field name="description">Chỉ những người có quyền hạn cao mới có thể truy cập</field>
+    </record>
+    <record id="document_security_level_4" model="document_security_level">
+      <field name="name">Mật</field>
+      <field name="description">Thông tin cần được bảo vệ nhưng không quá nghiêm ngặt</field>
+    </record>
+    <record id="document_security_level_5" model="document_security_level">
+      <field name="name">Công khai</field>
+      <field name="description">Thông tin có thể công khai</field>
+    </record>
+    <record id="document_security_level_6" model="document_security_level">
+      <field name="name">Nhạy cảm</field>
+      <field name="description">Thông tin quan trọng, cần kiểm soát truy cập</field>
+    </record>
+    <record id="document_security_level_7" model="document_security_level">
+      <field name="name">Riêng tư</field>
+      <field name="description">Thông tin chỉ dành cho một nhóm nhỏ</field>
+    </record>
+    <record id="document_security_level_8" model="document_security_level">
+      <field name="name">Tối quan trọng</field>
+      <field name="description">Dành cho các tài liệu chiến lược quan trọng</field>
+    </record>
+    <record id="document_security_level_9" model="document_security_level">
+      <field name="name">Hạn chế</field>
+      <field name="description">Thông tin chỉ được tiếp cận trong nội bộ</field>
+    </record>
+    <record id="document_security_level_10" model="document_security_level">
+      <field name="name">Bảo mật cao</field>
+      <field name="description">Chỉ những cá nhân được ủy quyền mới có thể xem</field>
+    </record>
+    <record id="document_security_level_11" model="document_security_level">
+      <field name="name">Bảo vệ dữ liệu</field>
+      <field name="description">Dành cho dữ liệu cá nhân và nhạy cảm</field>
+    </record>
+    <record id="document_security_level_12" model="document_security_level">
+      <field name="name">Bảo vệ hợp đồng</field>
+      <field name="description">Dành cho thông tin liên quan đến hợp đồng và giao dịch</field>
+    </record>
+    <record id="document_security_level_13" model="document_security_level">
+      <field name="name">Chỉ đọc</field>
+      <field name="description">Thông tin không thể chỉnh sửa</field>
+    </record>
+    <record id="document_security_level_14" model="document_security_level">
+      <field name="name">Chỉ nội bộ</field>
+      <field name="description">Không được phép chia sẻ ra ngoài</field>
+    </record>
+    <record id="document_security_level_15" model="document_security_level">
+      <field name="name">Đặc biệt</field>
+      <field name="description">Thông tin có tính chất đặc biệt, yêu cầu kiểm soát</field>
+    </record>
+    <record id="document_security_level_16" model="document_security_level">
+      <field name="name">Không công bố</field>
+      <field name="description">Thông tin không được phép công khai</field>
+    </record>
+    <record id="document_security_level_17" model="document_security_level">
+      <field name="name">Tạm thời</field>
+      <field name="description">Thông tin có thời hạn sử dụng ngắn</field>
+    </record>
+    <record id="document_security_level_18" model="document_security_level">
+      <field name="name">Quân sự</field>
+      <field name="description">Dành cho thông tin liên quan đến quân đội</field>
+    </record>
+    <record id="document_security_level_19" model="document_security_level">
+      <field name="name">Tài chính</field>
+      <field name="description">Thông tin liên quan đến tài chính và ngân hàng</field>
+    </record>
+    <record id="document_security_level_20" model="document_security_level">
+      <field name="name">Y tế</field>
+      <field name="description">Thông tin liên quan đến hồ sơ bệnh nhân</field>
+    </record>
+  </data>
+</odoo>

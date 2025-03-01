@@ -1,0 +1,24 @@
+<odoo>
+  <data noupdate="1">
+    <record id="document_year_1" model="document_year"><field name="name">2020</field><field name="description">Năm 2020</field></record>
+    <record id="document_year_2" model="document_year"><field name="name">2021</field><field name="description">Năm 2021</field></record>
+    <record id="document_year_3" model="document_year"><field name="name">2022</field><field name="description">Năm 2022</field></record>
+    <record id="document_year_4" model="document_year"><field name="name">2023</field><field name="description">Năm 2023</field></record>
+    <record id="document_year_5" model="document_year"><field name="name">2024</field><field name="description">Năm 2024</field></record>
+    <record id="document_year_6" model="document_year"><field name="name">2025</field><field name="description">Năm 2025</field></record>
+    <record id="document_year_7" model="document_year"><field name="name">2026</field><field name="description">Năm 2026</field></record>
+    <record id="document_year_8" model="document_year"><field name="name">2027</field><field name="description">Năm 2027</field></record>
+    <record id="document_year_9" model="document_year"><field name="name">2028</field><field name="description">Năm 2028</field></record>
+    <record id="document_year_10" model="document_year"><field name="name">2029</field><field name="description">Năm 2029</field></record>
+    <record id="document_year_11" model="document_year"><field name="name">2030</field><field name="description">Năm 2030</field></record>
+    <record id="document_year_12" model="document_year"><field name="name">2031</field><field name="description">Năm 2031</field></record>
+    <record id="document_year_13" model="document_year"><field name="name">2032</field><field name="description">Năm 2032</field></record>
+    <record id="document_year_14" model="document_year"><field name="name">2033</field><field name="description">Năm 2033</field></record>
+    <record id="document_year_15" model="document_year"><field name="name">2034</field><field name="description">Năm 2034</field></record>
+    <record id="document_year_16" model="document_year"><field name="name">2035</field><field name="description">Năm 2035</field></record>
+    <record id="document_year_17" model="document_year"><field name="name">2036</field><field name="description">Năm 2036</field></record>
+    <record id="document_year_18" model="document_year"><field name="name">2037</field><field name="description">Năm 2037</field></record>
+    <record id="document_year_19" model="document_year"><field name="name">2038</field><field name="description">Năm 2038</field></record>
+    <record id="document_year_20" model="document_year"><field name="name">2039</field><field name="description">Năm 2039</field></record>
+  </data>
+</odoo>

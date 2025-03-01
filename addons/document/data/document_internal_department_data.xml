@@ -1,0 +1,84 @@
+<odoo>
+  <data noupdate="1">
+    <record id="document_internal_department_1" model="document_internal_department">
+      <field name="name">Phòng Hành chính</field>
+      <field name="description">Phòng hỗ trợ công tác hành chính</field>
+    </record>
+    <record id="document_internal_department_2" model="document_internal_department">
+      <field name="name">Phòng Kế toán</field>
+      <field name="description">Phòng quản lý kế toán</field>
+    </record>
+    <record id="document_internal_department_3" model="document_internal_department">
+      <field name="name">Phòng Nhân sự</field>
+      <field name="description">Phòng quản lý nhân sự</field>
+    </record>
+    <record id="document_internal_department_4" model="document_internal_department">
+      <field name="name">Phòng Kinh doanh</field>
+      <field name="description">Phòng quản lý hoạt động kinh doanh</field>
+    </record>
+    <record id="document_internal_department_5" model="document_internal_department">
+      <field name="name">Phòng Kỹ thuật</field>
+      <field name="description">Phòng phụ trách kỹ thuật</field>
+    </record>
+    <record id="document_internal_department_6" model="document_internal_department">
+      <field name="name">Phòng IT</field>
+      <field name="description">Phòng công nghệ thông tin</field>
+    </record>
+    <record id="document_internal_department_7" model="document_internal_department">
+      <field name="name">Phòng Pháp chế</field>
+      <field name="description">Phòng phụ trách pháp lý</field>
+    </record>
+    <record id="document_internal_department_8" model="document_internal_department">
+      <field name="name">Phòng Marketing</field>
+      <field name="description">Phòng tiếp thị và truyền thông</field>
+    </record>
+    <record id="document_internal_department_9" model="document_internal_department">
+      <field name="name">Phòng Nghiên cứu &amp; Phát triển</field>
+      <field name="description">Phòng R&amp;D</field>
+    </record>
+    <record id="document_internal_department_10" model="document_internal_department">
+      <field name="name">Phòng Chăm sóc khách hàng</field>
+      <field name="description">Phòng CSKH</field>
+    </record>
+    <record id="document_internal_department_11" model="document_internal_department">
+      <field name="name">Phòng Quản trị rủi ro</field>
+      <field name="description">Phòng kiểm soát rủi ro</field>
+    </record>
+    <record id="document_internal_department_12" model="document_internal_department">
+      <field name="name">Phòng Đào tạo</field>
+      <field name="description">Phòng phụ trách đào tạo</field>
+    </record>
+    <record id="document_internal_department_13" model="document_internal_department">
+      <field name="name">Phòng Vận hành</field>
+      <field name="description">Phòng điều hành hoạt động</field>
+    </record>
+    <record id="document_internal_department_14" model="document_internal_department">
+      <field name="name">Phòng Xuất nhập khẩu</field>
+      <field name="description">Phòng quản lý xuất nhập khẩu</field>
+    </record>
+    <record id="document_internal_department_15" model="document_internal_department">
+      <field name="name">Phòng Quan hệ đối ngoại</field>
+      <field name="description">Phòng xử lý quan hệ đối tác</field>
+    </record>
+    <record id="document_internal_department_16" model="document_internal_department">
+      <field name="name">Phòng Đầu tư</field>
+      <field name="description">Phòng quản lý đầu tư</field>
+    </record>
+    <record id="document_internal_department_17" model="document_internal_department">
+      <field name="name">Phòng Kiểm toán nội bộ</field>
+      <field name="description">Phòng kiểm toán và giám sát nội bộ</field>
+    </record>
+    <record id="document_internal_department_18" model="document_internal_department">
+      <field name="name">Phòng Kế hoạch</field>
+      <field name="description">Phòng lập kế hoạch và chiến lược</field>
+    </record>
+    <record id="document_internal_department_19" model="document_internal_department">
+      <field name="name">Phòng Sản xuất</field>
+      <field name="description">Phòng quản lý sản xuất</field>
+    </record>
+    <record id="document_internal_department_20" model="document_internal_department">
+      <field name="name">Phòng Mua hàng</field>
+      <field name="description">Phòng quản lý mua hàng</field>
+    </record>
+  </data>
+</odoo>

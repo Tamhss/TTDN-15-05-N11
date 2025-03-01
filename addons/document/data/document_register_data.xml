@@ -1,0 +1,84 @@
+<odoo>
+  <data noupdate="1">
+    <record id="document_register_1" model="document_register">
+      <field name="name">Sổ văn bản nội bộ</field>
+      <field name="description">Sổ văn bản nội bộ của công ty</field>
+    </record>
+    <record id="document_register_2" model="document_register">
+      <field name="name">Sổ văn bản bên ngoài</field>
+      <field name="description">Sổ văn bản gửi đi bên ngoài</field>
+    </record>
+    <record id="document_register_3" model="document_register">
+      <field name="name">Sổ văn bản hành chính</field>
+      <field name="description">Sổ văn bản thuộc lĩnh vực hành chính</field>
+    </record>
+    <record id="document_register_4" model="document_register">
+      <field name="name">Sổ văn bản tài chính</field>
+      <field name="description">Sổ văn bản thuộc lĩnh vực tài chính</field>
+    </record>
+    <record id="document_register_5" model="document_register">
+      <field name="name">Sổ văn bản pháp luật</field>
+      <field name="description">Sổ văn bản liên quan đến pháp luật</field>
+    </record>
+    <record id="document_register_6" model="document_register">
+      <field name="name">Sổ văn bản đào tạo</field>
+      <field name="description">Sổ văn bản liên quan đến đào tạo nhân sự</field>
+    </record>
+    <record id="document_register_7" model="document_register">
+      <field name="name">Sổ văn bản kỹ thuật</field>
+      <field name="description">Sổ văn bản trong lĩnh vực kỹ thuật</field>
+    </record>
+    <record id="document_register_8" model="document_register">
+      <field name="name">Sổ văn bản nhân sự</field>
+      <field name="description">Sổ văn bản liên quan đến nhân sự</field>
+    </record>
+    <record id="document_register_9" model="document_register">
+      <field name="name">Sổ văn bản nội quy</field>
+      <field name="description">Sổ văn bản về nội quy, quy định</field>
+    </record>
+    <record id="document_register_10" model="document_register">
+      <field name="name">Sổ văn bản hợp đồng</field>
+      <field name="description">Sổ văn bản liên quan đến hợp đồng</field>
+    </record>
+    <record id="document_register_11" model="document_register">
+      <field name="name">Sổ văn bản an toàn lao động</field>
+      <field name="description">Sổ văn bản về an toàn lao động</field>
+    </record>
+    <record id="document_register_12" model="document_register">
+      <field name="name">Sổ văn bản hội họp</field>
+      <field name="description">Sổ văn bản biên bản các cuộc họp</field>
+    </record>
+    <record id="document_register_13" model="document_register">
+      <field name="name">Sổ văn bản chỉ thị</field>
+      <field name="description">Sổ văn bản các chỉ thị từ cấp trên</field>
+    </record>
+    <record id="document_register_14" model="document_register">
+      <field name="name">Sổ văn bản thông tư</field>
+      <field name="description">Sổ văn bản các thông tư mới</field>
+    </record>
+    <record id="document_register_15" model="document_register">
+      <field name="name">Sổ văn bản báo cáo</field>
+      <field name="description">Sổ văn bản chứa các báo cáo nội bộ</field>
+    </record>
+    <record id="document_register_16" model="document_register">
+      <field name="name">Sổ văn bản nghiên cứu</field>
+      <field name="description">Sổ văn bản liên quan đến nghiên cứu phát triển</field>
+    </record>
+    <record id="document_register_17" model="document_register">
+      <field name="name">Sổ văn bản kế hoạch</field>
+      <field name="description">Sổ văn bản các kế hoạch dài hạn</field>
+    </record>
+    <record id="document_register_18" model="document_register">
+      <field name="name">Sổ văn bản đối ngoại</field>
+      <field name="description">Sổ văn bản liên quan đến quan hệ đối ngoại</field>
+    </record>
+    <record id="document_register_19" model="document_register">
+      <field name="name">Sổ văn bản kiểm tra</field>
+      <field name="description">Sổ văn bản về kiểm tra đánh giá</field>
+    </record>
+    <record id="document_register_20" model="document_register">
+      <field name="name">Sổ văn bản khẩn cấp</field>
+      <field name="description">Sổ văn bản cần xử lý khẩn cấp</field>
+    </record>
+  </data>
+</odoo>
