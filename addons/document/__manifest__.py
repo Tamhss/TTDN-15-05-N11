@@ -18,7 +18,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'mail', 'nhan_su'],
 
     # always loaded
     'data': [
@@ -43,7 +43,7 @@
         # view
         'views/document_category.xml',
         'views/document_incoming.xml',
-        'views/document_outgoing.xml',
+        # 'views/document_outgoing.xml',
         'views/document_report.xml',
         'views/document_sign.xml',
         'views/document_workflow.xml',

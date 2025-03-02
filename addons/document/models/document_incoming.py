@@ -1,32 +1,80 @@
-from odoo import models, fields
+from odoo import models, fields, api
 
 class DocumentIncoming(models.Model):
     _name = 'document_incoming'
-    _description = 'Quản lý văn bản đến'
-    _rec_name = 'name'
+    _description = 'Văn bản đến'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
-    name = fields.Char(string="Số hiệu văn bản", required=True)
-    subject = fields.Char(string="Tiêu đề", required=True)
-    date_received = fields.Date(string="Ngày nhận", required=True, default=fields.Date.today)
-    sender = fields.Char(string="Người gửi", required=True)
-    category_id = fields.Many2one('document_category', string="Danh mục")
-    attachment_ids = fields.Many2many('ir.attachment', string="Tệp đính kèm")
-    description = fields.Text(string="Nội dung")
+    name = fields.Char(string='Số / Ký hiệu', required=True, tracking=True)
+    register_id = fields.Many2one('document_register', string='Sổ văn bản', required=True)
+    incoming_number = fields.Integer(string='Số đến', required=True, tracking=True)
+    issuing_agency_id = fields.Many2one('document_external_agency', string='Cơ quan ban hành văn bản', required=True)
+
+    received_date = fields.Date(string='Ngày đến', required=True, tracking=True)
+    issue_date = fields.Date(string='Ngày ban hành', required=True, tracking=True)
+    summary = fields.Text(string='Trích yếu', required=True)
+
+    document_type_id = fields.Many2one('document_type', string='Loại văn bản', required=True)
+    document_field_id = fields.Many2one('document_field', string='Lĩnh vực')
+    
+    signer_id = fields.Many2one('nhan_su.nhan_vien', string='Người ký', required=True)
+    signer_position = fields.Many2one('nhan_su.chuc_vu', string='Chức vụ người ký', compute='_compute_signer_position', store=True)
+
+    nature = fields.Selection([
+        ('urgent', 'Khẩn cấp'),
+        ('normal', 'Bình thường'),
+        ('confidential', 'Mật')
+    ], string='Tính chất văn bản')
+
+    receiving_method = fields.Selection([
+        ('email', 'Email'),
+        ('post', 'Bưu điện'),
+        ('direct', 'Gửi trực tiếp')
+    ], string='Phương thức nhận')
+
+    creator_id = fields.Many2one('nhan_su.nhan_vien', string='Người nhập')
+
+    response_document_id = fields.Many2one('document.outgoing', string='Hồi đáp của văn bản đi')
+
+    document_file = fields.Binary(string='Tệp văn bản')
+    file_name = fields.Char(string='Tên tệp')
+
+    office_leader_id = fields.Many2one('nhan_su.nhan_vien', string='Lãnh đạo văn phòng')
+    office_advisor_id = fields.Many2one('nhan_su.nhan_vien', string='Tham mưu của lãnh đạo văn phòng')
+
+    leader_id = fields.Many2one('nhan_su.nhan_vien', string='Lãnh đạo')
+    leader_instruction = fields.Text(string='Chỉ đạo của Lãnh đạo')
+
+    processing_unit_id = fields.Many2one('document_internal_department', string='Đơn vị xử lý')
+    processing_deadline = fields.Date(string='Hạn xử lý')
+    processor_id = fields.Many2one('nhan_su.nhan_vien', string='Người xử lý văn bản')
+
+    cooperating_unit_ids = fields.Many2many('document_internal_department', string='Đơn vị phối hợp xử lý')
+    cooperating_user_ids = fields.Many2many(
+        'nhan_su.nhan_vien', 
+        string='Người phối hợp xử lý'
+    )
+
+    viewers_ids = fields.Many2many(
+        'nhan_su.nhan_vien', 
+        string='Người xem để biết',
+        relation='document_incoming_viewers_rel'
+    )
 
     state = fields.Selection([
         ('draft', 'Nháp'),
-        ('in_progress', 'Đang xử lý'),
-        ('approved', 'Đã duyệt'),
-        ('done', 'Hoàn thành')
-    ], default='draft', string="Trạng thái")
+        ('received', 'Đã nhận'),
+        ('processing', 'Đang xử lý'),
+        ('completed', 'Hoàn thành')
+    ], string='Trạng thái', default='draft', tracking=True)
 
-    assigned_user_id = fields.Many2one('res.users', string="Người phụ trách")
-    
-    def action_set_in_progress(self):
-        self.state = 'in_progress'
+    @api.depends('signer_id')
+    def _compute_signer_position(self):
+        for record in self:
+            record.signer_position = record.signer_id.chuc_vu_id if record.signer_id else False
 
-    def action_approve(self):
-        self.state = 'approved'
-
-    def action_done(self):
-        self.state = 'done'
+    @api.model
+    def create(self, vals):
+        if 'incoming_number' not in vals or not vals['incoming_number']:
+            vals['incoming_number'] = self.env['ir.sequence'].next_by_code('document.incoming') or 'IN-00001'
+        return super(DocumentIncoming, self).create(vals)

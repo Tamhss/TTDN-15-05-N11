@@ -70,3 +70,38 @@ class NhanVien(models.Model):
             for lich_su in record.lich_su_cong_tac_ids:
                 if not lich_su.nhan_vien_id:
                     lich_su.nhan_vien_id = record.id
+
+
+    document_signed_ids = fields.One2many(
+        'document.document_incoming', 'signer_id',
+        string="Văn bản đã ký"
+    )
+
+    document_created_ids = fields.One2many(
+        'document.document_incoming', 'creator_id',
+        string="Văn bản đã nhập"
+    )
+
+    document_processed_ids = fields.One2many(
+        'document.document_incoming', 'processor_id',
+        string="Văn bản đang xử lý"
+    )
+
+    document_lead_ids = fields.One2many(
+        'document.document_incoming', 'leader_id',
+        string="Văn bản lãnh đạo chỉ đạo"
+    )
+
+    document_cooperating_ids = fields.Many2many(
+        'document.document_incoming', 
+        'document_incoming_cooperating_nhan_vien_rel',
+        'nhan_vien_id', 'document_id',
+        string="Văn bản phối hợp xử lý"
+    )
+
+    document_viewer_ids = fields.Many2many(
+        'document.document_incoming', 
+        'document_incoming_viewers_rel',
+        'nhan_vien_id', 'document_id',
+        string="Văn bản xem để biết"
+    )
