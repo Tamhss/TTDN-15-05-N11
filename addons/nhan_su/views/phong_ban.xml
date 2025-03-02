@@ -2,16 +2,29 @@
 <odoo>
     <data>
         <record id="view_phong_ban_form" model="ir.ui.view">
-            <field name="name">phong_ban</field>
+            <field name="name">phong_ban_form</field>
             <field name="model">phong_ban</field>
             <field name="arch" type="xml">
                 <form>
                     <sheet>
-                        <div class="oe_read_only" style="font-size:25px">Đơn vị</div>
-                        <group col="4" string="Thông tin chung">
+                        <div class="oe_read_only" style="font-size:25px">Phòng ban</div>
+                        <group>
                             <field name="ma_phong_ban"/>
                             <field name="ten_phong_ban"/>
                         </group>
+                        <notebook>
+                            <page string="Danh sách chức vụ">
+                                <field name="chuc_vu_ids">
+                                    <tree>
+                                        <field name="ma_chuc_vu"/>
+                                        <field name="ten_chuc_vu"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Danh sách nhân viên">
+                                <field name="nhan_vien_ids" widget="many2many_tags"/>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>

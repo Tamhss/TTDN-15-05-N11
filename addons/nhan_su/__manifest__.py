@@ -24,6 +24,12 @@
 
     # always loaded
     'data': [
+        'data/phong_ban_data.xml',
+        'data/chuc_vu_data.xml',
+        'data/nhan_vien_data.xml',
+        'data/lich_su_cong_tac_data.xml',
+        'data/chung_chi_data.xml',
+
         'security/ir.model.access.csv',
         'views/nhan_vien.xml',
         'views/phong_ban.xml',

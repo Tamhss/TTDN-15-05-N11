@@ -5,7 +5,10 @@ class ChucVu(models.Model):
     _name = 'chuc_vu'
     _description = 'Bảng chứa thông tin chức vụ'
     _order = 'ma_chuc_vu'
+    _sql_constraints = [
+        ('unique_ma_chuc_vu', 'UNIQUE(ma_chuc_vu)', 'Mã chức vụ phải là duy nhất!')
+    ]
 
-    ma_chuc_vu = fields.Char("Mã chức vụ", required=True, store=True)
-    ten_chuc_vu = fields.Text("Tên chức vụ")
-    phong_ban_id = fields.Many2one(comodel_name='phong_ban', string='Phòng ban', required=True)
+    ma_chuc_vu = fields.Char("Mã chức vụ", required=True, index=True)
+    ten_chuc_vu = fields.Char("Tên chức vụ", required=True)
+    phong_ban_id = fields.Many2one('phong_ban', string='Phòng ban', required=True)

@@ -1,0 +1,224 @@
+<odoo>
+    <data noupdate="1">
+        <record id="nhan_vien_1" model="nhan_vien">
+        <field name="ma_dinh_danh">NV001</field>
+        <field name="ho_ten">Nguyễn Văn A</field>
+        <field name="ngay_sinh">1990-05-10</field>
+        <field name="que_quan">Hà Nội</field>
+        <field name="email">nguyenvana@example.com</field>
+        <field name="so_dien_thoai">0987654321</field>
+        <field name="phong_ban_id" ref="phong_ban_it"/>
+        <field name="chuc_vu_id" ref="chuc_vu_truong_phong_it"/>
+    </record>
+
+    <record id="nhan_vien_2" model="nhan_vien">
+        <field name="ma_dinh_danh">NV002</field>
+        <field name="ho_ten">Trần Thị B</field>
+        <field name="ngay_sinh">1995-08-20</field>
+        <field name="que_quan">Hải Phòng</field>
+        <field name="email">tranthib@example.com</field>
+        <field name="so_dien_thoai">0977654321</field>
+        <field name="phong_ban_id" ref="phong_ban_hr"/>
+        <field name="chuc_vu_id" ref="chuc_vu_nhan_vien_hr"/>
+    </record>
+
+    <record id="nhan_vien_3" model="nhan_vien">
+        <field name="ma_dinh_danh">NV003</field>
+        <field name="ho_ten">Lê Văn C</field>
+        <field name="ngay_sinh">1988-12-15</field>
+        <field name="que_quan">Đà Nẵng</field>
+        <field name="email">levanc@example.com</field>
+        <field name="so_dien_thoai">0965432109</field>
+        <field name="phong_ban_id" ref="phong_ban_ke_toan"/>
+        <field name="chuc_vu_id" ref="chuc_vu_truong_phong_ke_toan"/>
+    </record>
+
+    <record id="nhan_vien_4" model="nhan_vien">
+        <field name="ma_dinh_danh">NV004</field>
+        <field name="ho_ten">Phạm Thị D</field>
+        <field name="ngay_sinh">1992-07-22</field>
+        <field name="que_quan">TP. HCM</field>
+        <field name="email">phamthid@example.com</field>
+        <field name="so_dien_thoai">0954321098</field>
+        <field name="phong_ban_id" ref="phong_ban_ke_toan"/>
+        <field name="chuc_vu_id" ref="chuc_vu_nhan_vien_ke_toan"/>
+    </record>
+
+    <record id="nhan_vien_5" model="nhan_vien">
+        <field name="ma_dinh_danh">NV005</field>
+        <field name="ho_ten">Hoàng Văn E</field>
+        <field name="ngay_sinh">1985-03-30</field>
+        <field name="que_quan">Cần Thơ</field>
+        <field name="email">hoangvane@example.com</field>
+        <field name="so_dien_thoai">0943210987</field>
+        <field name="phong_ban_id" ref="phong_ban_kinh_doanh"/>
+        <field name="chuc_vu_id" ref="chuc_vu_truong_phong_kinh_doanh"/>
+    </record>
+
+    <record id="nhan_vien_6" model="nhan_vien">
+        <field name="ma_dinh_danh">NV006</field>
+        <field name="ho_ten">Nguyễn Thị F</field>
+        <field name="ngay_sinh">1994-11-18</field>
+        <field name="que_quan">Bình Dương</field>
+        <field name="email">nguyenthif@example.com</field>
+        <field name="so_dien_thoai">0932109876</field>
+        <field name="phong_ban_id" ref="phong_ban_kinh_doanh"/>
+        <field name="chuc_vu_id" ref="chuc_vu_nhan_vien_kinh_doanh"/>
+    </record>
+
+    <record id="nhan_vien_7" model="nhan_vien">
+        <field name="ma_dinh_danh">NV007</field>
+        <field name="ho_ten">Bùi Văn G</field>
+        <field name="ngay_sinh">1987-09-25</field>
+        <field name="que_quan">Huế</field>
+        <field name="email">buivang@example.com</field>
+        <field name="so_dien_thoai">0921098765</field>
+        <field name="phong_ban_id" ref="phong_ban_marketing"/>
+        <field name="chuc_vu_id" ref="chuc_vu_truong_phong_marketing"/>
+    </record>
+
+    <record id="nhan_vien_8" model="nhan_vien">
+        <field name="ma_dinh_danh">NV008</field>
+        <field name="ho_ten">Đặng Thị H</field>
+        <field name="ngay_sinh">1993-06-12</field>
+        <field name="que_quan">Hà Tĩnh</field>
+        <field name="email">dangthih@example.com</field>
+        <field name="so_dien_thoai">0910987654</field>
+        <field name="phong_ban_id" ref="phong_ban_marketing"/>
+        <field name="chuc_vu_id" ref="chuc_vu_nhan_vien_marketing"/>
+    </record>
+
+    <record id="nhan_vien_9" model="nhan_vien">
+        <field name="ma_dinh_danh">NV009</field>
+        <field name="ho_ten">Trịnh Văn I</field>
+        <field name="ngay_sinh">1989-04-05</field>
+        <field name="que_quan">Nghệ An</field>
+        <field name="email">trinhvani@example.com</field>
+        <field name="so_dien_thoai">0909876543</field>
+        <field name="phong_ban_id" ref="phong_ban_it"/>
+        <field name="chuc_vu_id" ref="chuc_vu_nhan_vien_it"/>
+    </record>
+
+    <record id="nhan_vien_10" model="nhan_vien">
+        <field name="ma_dinh_danh">NV010</field>
+        <field name="ho_ten">Võ Thị K</field>
+        <field name="ngay_sinh">1996-10-14</field>
+        <field name="que_quan">Quảng Nam</field>
+        <field name="email">vothik@example.com</field>
+        <field name="so_dien_thoai">0898765432</field>
+        <field name="phong_ban_id" ref="phong_ban_hanh_chinh"/>
+        <field name="chuc_vu_id" ref="chuc_vu_truong_phong_hanh_chinh"/>
+    </record>
+
+    <record id="nhan_vien_11" model="nhan_vien">
+        <field name="ma_dinh_danh">NV011</field>
+        <field name="ho_ten">Nguyễn Hữu L</field>
+        <field name="ngay_sinh">1983-07-29</field>
+        <field name="que_quan">Gia Lai</field>
+        <field name="email">nguyenhuul@example.com</field>
+        <field name="so_dien_thoai">0887654321</field>
+        <field name="phong_ban_id" ref="phong_ban_bao_tri"/>
+        <field name="chuc_vu_id" ref="chuc_vu_truong_phong_bao_tri"/>
+    </record>
+
+    <record id="nhan_vien_12" model="nhan_vien">
+        <field name="ma_dinh_danh">NV012</field>
+        <field name="ho_ten">Phan Thị M</field>
+        <field name="ngay_sinh">1991-02-17</field>
+        <field name="que_quan">Đồng Nai</field>
+        <field name="email">phanthim@example.com</field>
+        <field name="so_dien_thoai">0876543210</field>
+        <field name="phong_ban_id" ref="phong_ban_bao_tri"/>
+        <field name="chuc_vu_id" ref="chuc_vu_nhan_vien_bao_tri"/>
+    </record>
+
+    <record id="nhan_vien_13" model="nhan_vien">
+        <field name="ma_dinh_danh">NV013</field>
+        <field name="ho_ten">Đỗ Văn N</field>
+        <field name="ngay_sinh">1997-09-25</field>
+        <field name="que_quan">Tây Ninh</field>
+        <field name="email">dovann@example.com</field>
+        <field name="so_dien_thoai">0865432109</field>
+        <field name="phong_ban_id" ref="phong_ban_it"/>
+        <field name="chuc_vu_id" ref="chuc_vu_nhan_vien_it"/>
+    </record>
+
+    <record id="nhan_vien_14" model="nhan_vien">
+        <field name="ma_dinh_danh">NV014</field>
+        <field name="ho_ten">Hồ Thị O</field>
+        <field name="ngay_sinh">1986-06-30</field>
+        <field name="que_quan">Ninh Thuận</field>
+        <field name="email">hothio@example.com</field>
+        <field name="so_dien_thoai">0854321098</field>
+        <field name="phong_ban_id" ref="phong_ban_hanh_chinh"/>
+        <field name="chuc_vu_id" ref="chuc_vu_nhan_vien_hanh_chinh"/>
+    </record>
+
+    <record id="nhan_vien_15" model="nhan_vien">
+        <field name="ma_dinh_danh">NV015</field>
+        <field name="ho_ten">Lý Văn P</field>
+        <field name="ngay_sinh">1990-12-01</field>
+        <field name="que_quan">Vĩnh Long</field>
+        <field name="email">lyvanp@example.com</field>
+        <field name="so_dien_thoai">0843210987</field>
+        <field name="phong_ban_id" ref="phong_ban_ke_toan"/>
+        <field name="chuc_vu_id" ref="chuc_vu_nhan_vien_ke_toan"/>
+    </record>
+
+    <record id="nhan_vien_16" model="nhan_vien">
+        <field name="ma_dinh_danh">NV016</field>
+        <field name="ho_ten">Cao Thị Q</field>
+        <field name="ngay_sinh">1993-03-23</field>
+        <field name="que_quan">Cà Mau</field>
+        <field name="email">caothiq@example.com</field>
+        <field name="so_dien_thoai">0832109876</field>
+        <field name="phong_ban_id" ref="phong_ban_kinh_doanh"/>
+        <field name="chuc_vu_id" ref="chuc_vu_nhan_vien_kinh_doanh"/>
+    </record>
+
+    <record id="nhan_vien_17" model="nhan_vien">
+        <field name="ma_dinh_danh">NV017</field>
+        <field name="ho_ten">Dương Văn R</field>
+        <field name="ngay_sinh">1998-01-11</field>
+        <field name="que_quan">Lâm Đồng</field>
+        <field name="email">duongvanr@example.com</field>
+        <field name="so_dien_thoai">0821098765</field>
+        <field name="phong_ban_id" ref="phong_ban_marketing"/>
+        <field name="chuc_vu_id" ref="chuc_vu_nhan_vien_marketing"/>
+    </record>
+
+    <record id="nhan_vien_18" model="nhan_vien">
+        <field name="ma_dinh_danh">NV018</field>
+        <field name="ho_ten">Tô Thị S</field>
+        <field name="ngay_sinh">1984-08-14</field>
+        <field name="que_quan">Phú Yên</field>
+        <field name="email">tothis@example.com</field>
+        <field name="so_dien_thoai">0810987654</field>
+        <field name="phong_ban_id" ref="phong_ban_hanh_chinh"/>
+        <field name="chuc_vu_id" ref="chuc_vu_nhan_vien_hanh_chinh"/>
+    </record>
+
+    <record id="nhan_vien_19" model="nhan_vien">
+        <field name="ma_dinh_danh">NV019</field>
+        <field name="ho_ten">Bạch Văn T</field>
+        <field name="ngay_sinh">1992-05-07</field>
+        <field name="que_quan">Kon Tum</field>
+        <field name="email">bachvant@example.com</field>
+        <field name="so_dien_thoai">0809876543</field>
+        <field name="phong_ban_id" ref="phong_ban_it"/>
+        <field name="chuc_vu_id" ref="chuc_vu_nhan_vien_it"/>
+    </record>
+
+    <record id="nhan_vien_20" model="nhan_vien">
+        <field name="ma_dinh_danh">NV020</field>
+        <field name="ho_ten">Châu Thị U</field>
+        <field name="ngay_sinh">1995-12-09</field>
+        <field name="que_quan">Bạc Liêu</field>
+        <field name="email">chaothiu@example.com</field>
+        <field name="so_dien_thoai">0798765432</field>
+        <field name="phong_ban_id" ref="phong_ban_ke_toan"/>
+        <field name="chuc_vu_id" ref="chuc_vu_nhan_vien_ke_toan"/>
+    </record>
+
+    </data>
+</odoo>

@@ -11,40 +11,43 @@ class NhanVien(models.Model):
     _rec_name = 'ho_ten'
     _order = 'ma_dinh_danh'
     _sql_constraints = [
-        ('ma_dinh_danh_unique', 'unique(ma_dinh_danh)', 'Mã định danh phải là duy nhất!')
+        ('unique_ma_dinh_danh', 'UNIQUE(ma_dinh_danh)', 'Mã định danh phải là duy nhất!')
     ]
 
-    ma_dinh_danh = fields.Char("Mã định danh", required=True)
+    ma_dinh_danh = fields.Char("Mã định danh", required=True, index=True)
     ho_ten = fields.Char("Họ và tên", required=True)
-    ngay_sinh = fields.Date("Ngày sinh")
+    ngay_sinh = fields.Date("Ngày sinh", required=True)
     que_quan = fields.Char("Quê quán")
-    email = fields.Char("Email")
-    so_dien_thoai = fields.Char("Số điện thoại")
-    phong_ban_ids = fields.Many2many(comodel_name='phong_ban', string="Phòng ban")
-    lich_su_cong_tac_ids = fields.One2many(comodel_name='lich_su_cong_tac', inverse_name="nhan_vien_id",
-                                           string="Lịch sử công tác")
-    chung_chi_ids = fields.One2many(comodel_name='chung_chi', inverse_name="nhan_vien_id",
-                                    string="Chứng chỉ")
+    email = fields.Char("Email", required=True)
+    so_dien_thoai = fields.Char("Số điện thoại", required=True)
+    phong_ban_id = fields.Many2one('phong_ban', string="Phòng ban", required=True)
+    chuc_vu_id = fields.Many2one('chuc_vu', string="Chức vụ", required=True)
+    lich_su_cong_tac_ids = fields.One2many('lich_su_cong_tac', 'nhan_vien_id', string="Lịch sử công tác")
+    chung_chi_ids = fields.One2many('chung_chi', 'nhan_vien_id', string="Chứng chỉ")
+
     tuoi = fields.Integer(string="Tuổi", compute='_compute_tuoi', store=True)
     thang_sinh = fields.Integer(string="Tháng sinh", compute='_compute_thang_sinh', store=True)
 
     @api.depends("ngay_sinh")
     def _compute_tuoi(self):
+        today = datetime.date.today()
         for record in self:
             if record.ngay_sinh:
-                record.tuoi = datetime.date.today().year - record.ngay_sinh.year
+                birth_date = record.ngay_sinh
+                record.tuoi = today.year - birth_date.year - ((today.month, today.day) < (birth_date.month, birth_date.day))
+            else:
+                record.tuoi = 0
 
-    @api.onchange("ngay_sinh")
+    @api.depends("ngay_sinh")
     def _compute_thang_sinh(self):
         for record in self:
-            if record.ngay_sinh:
-                record.thang_sinh = record.ngay_sinh.month
+            record.thang_sinh = record.ngay_sinh.month if record.ngay_sinh else 0
 
     @api.constrains('tuoi')
     def _check_tuoi(self):
         for record in self:
             if record.tuoi < 18:
-                raise ValidationError("Tuổi bé hơn 18")
+                raise ValidationError("Nhân viên phải từ 18 tuổi trở lên!")
 
     @api.constrains('email')
     def _check_email(self):
@@ -59,3 +62,11 @@ class NhanVien(models.Model):
         for record in self:
             if record.so_dien_thoai and not re.match(phone_regex, record.so_dien_thoai):
                 raise ValidationError("Số điện thoại không hợp lệ! Phải có 10 hoặc 11 chữ số.")
+            
+    @api.onchange('lich_su_cong_tac_ids')
+    def _onchange_lich_su_cong_tac(self):
+        """ Gán tự động nhân viên vào lịch sử công tác """
+        for record in self:
+            for lich_su in record.lich_su_cong_tac_ids:
+                if not lich_su.nhan_vien_id:
+                    lich_su.nhan_vien_id = record.id
