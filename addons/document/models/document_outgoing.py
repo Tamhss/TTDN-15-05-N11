@@ -16,7 +16,7 @@ class DocumentOutgoing(models.Model):
     summary = fields.Text(string='Trích yếu', required=True)
     
     signer_id = fields.Many2one('nhan_vien', string='Người ký', required=True)
-    signer_position = fields.Char(string='Chức vụ người ký', compute='_compute_signer_position', store=True)
+    signer_position = fields.Many2one('chuc_vu', string='Chức vụ người ký', compute='_compute_signer_position', store=True)
     
     drafting_unit_id = fields.Many2one('document_internal_department', string='Đơn vị thảo')
     drafter_id = fields.Many2one('nhan_vien', string='Người soạn thảo')
@@ -34,7 +34,7 @@ class DocumentOutgoing(models.Model):
 
     security_level_id = fields.Many2one('document_security_level', string='Độ mật')
 
-    creator_id = fields.Many2one('nhan_vien', string='Người nhập', default=lambda self: self.env.user)
+    creator_id = fields.Many2one('nhan_vien', string='Người nhập')
 
     is_reply_required = fields.Boolean(string='Là văn bản cần trả lời')
     is_qppl = fields.Boolean(string='Là văn bản QPPL')
@@ -53,7 +53,7 @@ class DocumentOutgoing(models.Model):
     @api.depends('signer_id')
     def _compute_signer_position(self):
         for record in self:
-            record.signer_position = record.signer_id.chuc_vu_id.ten_chuc_vu if record.signer_id.chuc_vu_id else ''
+            record.signer_position = record.signer_id.chuc_vu_id if record.signer_id else False
 
     @api.model
     def create(self, vals):
