@@ -49,7 +49,7 @@
         # view
         'views/document_category.xml',
         'views/document_incoming.xml',
-        # 'views/document_outgoing.xml',
+        'views/document_outgoing.xml',
         'views/document_report.xml',
         'views/document_sign.xml',
         'views/document_workflow.xml',

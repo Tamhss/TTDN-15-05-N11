@@ -13,8 +13,14 @@ class ChucVu(models.Model):
     ten_chuc_vu = fields.Char("Tên chức vụ", required=True)
     phong_ban_id = fields.Many2one('phong_ban', string='Phòng ban', required=True)
 
+    document_signed_position_ids = fields.One2many(
+        'document_incoming', 'signer_position',
+        string="Văn bản đã ký theo chức vụ"
+    )
+
     def name_get(self):
         result = []
         for record in self:
             result.append((record.id, record.ten_chuc_vu))
         return result
+    
