@@ -1,7 +1,12 @@
 # -*- coding: utf-8 -*-
+from . import nhan_vien
+from . import phong_ban
+from . import chuc_vu
+from . import lich_su_cong_tac
+from . import chung_chi
 
 from . import document_incoming
-# from . import document_outgoing
+from . import document_outgoing
 from . import document_category
 from . import document_workflow
 from . import document_sign
@@ -18,3 +23,4 @@ from . import document_internal_department
 from . import document_job_position
 from . import document_public_holiday
 from . import document_year
+

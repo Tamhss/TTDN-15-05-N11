@@ -1,0 +1,144 @@
+<odoo>
+    <data noupdate="1">
+        <record id="chung_chi_1" model="chung_chi">
+            <field name="ma_chung_chi">CC001</field>
+            <field name="ten_chung_chi">Chứng chỉ Quản trị mạng Cisco CCNA</field>
+            <field name="ghi_chu">Chứng chỉ chuyên sâu về mạng</field>
+            <field name="nhan_vien_id" ref="nhan_vien_1"/>
+        </record>
+
+        <record id="chung_chi_2" model="chung_chi">
+            <field name="ma_chung_chi">CC002</field>
+            <field name="ten_chung_chi">Chứng chỉ Quản lý Nhân sự</field>
+            <field name="ghi_chu">Kỹ năng quản lý nhân sự nâng cao</field>
+            <field name="nhan_vien_id" ref="nhan_vien_2"/>
+        </record>
+
+        <record id="chung_chi_3" model="chung_chi">
+            <field name="ma_chung_chi">CC003</field>
+            <field name="ten_chung_chi">Chứng chỉ PMP (Project Management Professional)</field>
+            <field name="ghi_chu">Quản lý dự án chuyên nghiệp</field>
+            <field name="nhan_vien_id" ref="nhan_vien_3"/>
+        </record>
+
+        <record id="chung_chi_4" model="chung_chi">
+            <field name="ma_chung_chi">CC004</field>
+            <field name="ten_chung_chi">Chứng chỉ MOS (Microsoft Office Specialist)</field>
+            <field name="ghi_chu">Chứng chỉ tin học văn phòng</field>
+            <field name="nhan_vien_id" ref="nhan_vien_4"/>
+        </record>
+
+        <record id="chung_chi_5" model="chung_chi">
+            <field name="ma_chung_chi">CC005</field>
+            <field name="ten_chung_chi">Chứng chỉ TOEIC 850</field>
+            <field name="ghi_chu">Chứng chỉ tiếng Anh giao tiếp</field>
+            <field name="nhan_vien_id" ref="nhan_vien_5"/>
+        </record>
+
+        <record id="chung_chi_6" model="chung_chi">
+            <field name="ma_chung_chi">CC006</field>
+            <field name="ten_chung_chi">Chứng chỉ Kế toán trưởng</field>
+            <field name="ghi_chu">Chứng chỉ chuyên sâu về kế toán</field>
+            <field name="nhan_vien_id" ref="nhan_vien_6"/>
+        </record>
+
+        <record id="chung_chi_7" model="chung_chi">
+            <field name="ma_chung_chi">CC007</field>
+            <field name="ten_chung_chi">Chứng chỉ AWS Certified Solutions Architect</field>
+            <field name="ghi_chu">Chứng chỉ về điện toán đám mây</field>
+            <field name="nhan_vien_id" ref="nhan_vien_7"/>
+        </record>
+
+        <record id="chung_chi_8" model="chung_chi">
+            <field name="ma_chung_chi">CC008</field>
+            <field name="ten_chung_chi">Chứng chỉ Google Digital Marketing</field>
+            <field name="ghi_chu">Chứng chỉ marketing online</field>
+            <field name="nhan_vien_id" ref="nhan_vien_8"/>
+        </record>
+
+        <record id="chung_chi_9" model="chung_chi">
+            <field name="ma_chung_chi">CC009</field>
+            <field name="ten_chung_chi">Chứng chỉ An toàn lao động</field>
+            <field name="ghi_chu">Đào tạo an toàn lao động</field>
+            <field name="nhan_vien_id" ref="nhan_vien_9"/>
+        </record>
+
+        <record id="chung_chi_10" model="chung_chi">
+            <field name="ma_chung_chi">CC010</field>
+            <field name="ten_chung_chi">Chứng chỉ Scrum Master</field>
+            <field name="ghi_chu">Quản lý quy trình phát triển phần mềm Agile</field>
+            <field name="nhan_vien_id" ref="nhan_vien_10"/>
+        </record>
+
+        <record id="chung_chi_11" model="chung_chi">
+            <field name="ma_chung_chi">CC011</field>
+            <field name="ten_chung_chi">Chứng chỉ CFA Level 1</field>
+            <field name="ghi_chu">Chuyên sâu về tài chính</field>
+            <field name="nhan_vien_id" ref="nhan_vien_11"/>
+        </record>
+
+        <record id="chung_chi_12" model="chung_chi">
+            <field name="ma_chung_chi">CC012</field>
+            <field name="ten_chung_chi">Chứng chỉ IELTS 7.5</field>
+            <field name="ghi_chu">Chứng chỉ tiếng Anh quốc tế</field>
+            <field name="nhan_vien_id" ref="nhan_vien_12"/>
+        </record>
+
+        <record id="chung_chi_13" model="chung_chi">
+            <field name="ma_chung_chi">CC013</field>
+            <field name="ten_chung_chi">Chứng chỉ Phân tích dữ liệu với Python</field>
+            <field name="ghi_chu">Khóa học chuyên sâu về Python</field>
+            <field name="nhan_vien_id" ref="nhan_vien_13"/>
+        </record>
+
+        <record id="chung_chi_14" model="chung_chi">
+            <field name="ma_chung_chi">CC014</field>
+            <field name="ten_chung_chi">Chứng chỉ Kỹ năng giao tiếp</field>
+            <field name="ghi_chu">Chứng chỉ đào tạo kỹ năng mềm</field>
+            <field name="nhan_vien_id" ref="nhan_vien_14"/>
+        </record>
+
+        <record id="chung_chi_15" model="chung_chi">
+            <field name="ma_chung_chi">CC015</field>
+            <field name="ten_chung_chi">Chứng chỉ DevOps</field>
+            <field name="ghi_chu">Chứng chỉ về quy trình DevOps</field>
+            <field name="nhan_vien_id" ref="nhan_vien_15"/>
+        </record>
+
+        <record id="chung_chi_16" model="chung_chi">
+            <field name="ma_chung_chi">CC016</field>
+            <field name="ten_chung_chi">Chứng chỉ Lập trình Java</field>
+            <field name="ghi_chu">Khóa học Java nâng cao</field>
+            <field name="nhan_vien_id" ref="nhan_vien_16"/>
+        </record>
+
+        <record id="chung_chi_17" model="chung_chi">
+            <field name="ma_chung_chi">CC017</field>
+            <field name="ten_chung_chi">Chứng chỉ Thiết kế đồ họa</field>
+            <field name="ghi_chu">Chứng chỉ Photoshop, Illustrator</field>
+            <field name="nhan_vien_id" ref="nhan_vien_17"/>
+        </record>
+
+        <record id="chung_chi_18" model="chung_chi">
+            <field name="ma_chung_chi">CC018</field>
+            <field name="ten_chung_chi">Chứng chỉ AutoCAD</field>
+            <field name="ghi_chu">Chứng chỉ thiết kế kỹ thuật</field>
+            <field name="nhan_vien_id" ref="nhan_vien_18"/>
+        </record>
+
+        <record id="chung_chi_19" model="chung_chi">
+            <field name="ma_chung_chi">CC019</field>
+            <field name="ten_chung_chi">Chứng chỉ Quản lý kho</field>
+            <field name="ghi_chu">Chứng chỉ logistics</field>
+            <field name="nhan_vien_id" ref="nhan_vien_19"/>
+        </record>
+
+        <record id="chung_chi_20" model="chung_chi">
+            <field name="ma_chung_chi">CC020</field>
+            <field name="ten_chung_chi">Chứng chỉ Hành chính văn phòng</field>
+            <field name="ghi_chu">Quản lý hành chính</field>
+            <field name="nhan_vien_id" ref="nhan_vien_20"/>
+        </record>
+
+    </data>
+</odoo>

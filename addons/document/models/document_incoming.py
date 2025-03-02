@@ -17,8 +17,8 @@ class DocumentIncoming(models.Model):
     document_type_id = fields.Many2one('document_type', string='Loại văn bản', required=True)
     document_field_id = fields.Many2one('document_field', string='Lĩnh vực')
     
-    signer_id = fields.Many2one('nhan_su.nhan_vien', string='Người ký', required=True)
-    signer_position = fields.Many2one('nhan_su.chuc_vu', string='Chức vụ người ký', compute='_compute_signer_position', store=True)
+    signer_id = fields.Many2one('nhan_vien', string='Người ký', required=True)
+    signer_position = fields.Many2one('chuc_vu', string='Chức vụ người ký', compute='_compute_signer_position', store=True)
 
     nature = fields.Selection([
         ('urgent', 'Khẩn cấp'),
@@ -32,33 +32,38 @@ class DocumentIncoming(models.Model):
         ('direct', 'Gửi trực tiếp')
     ], string='Phương thức nhận')
 
-    creator_id = fields.Many2one('nhan_su.nhan_vien', string='Người nhập')
+    creator_id = fields.Many2one('nhan_vien', string='Người nhập')
 
     response_document_id = fields.Many2one('document.outgoing', string='Hồi đáp của văn bản đi')
 
     document_file = fields.Binary(string='Tệp văn bản')
     file_name = fields.Char(string='Tên tệp')
 
-    office_leader_id = fields.Many2one('nhan_su.nhan_vien', string='Lãnh đạo văn phòng')
-    office_advisor_id = fields.Many2one('nhan_su.nhan_vien', string='Tham mưu của lãnh đạo văn phòng')
+    office_leader_id = fields.Many2one('nhan_vien', string='Lãnh đạo văn phòng')
+    office_advisor_id = fields.Many2one('nhan_vien', string='Tham mưu của lãnh đạo văn phòng')
 
-    leader_id = fields.Many2one('nhan_su.nhan_vien', string='Lãnh đạo')
+    leader_id = fields.Many2one('nhan_vien', string='Lãnh đạo')
     leader_instruction = fields.Text(string='Chỉ đạo của Lãnh đạo')
 
     processing_unit_id = fields.Many2one('document_internal_department', string='Đơn vị xử lý')
     processing_deadline = fields.Date(string='Hạn xử lý')
-    processor_id = fields.Many2one('nhan_su.nhan_vien', string='Người xử lý văn bản')
+    processor_id = fields.Many2one('nhan_vien', string='Người xử lý văn bản')
 
     cooperating_unit_ids = fields.Many2many('document_internal_department', string='Đơn vị phối hợp xử lý')
     cooperating_user_ids = fields.Many2many(
-        'nhan_su.nhan_vien', 
+        'nhan_vien',
+        'document_incoming_cooperating_nhan_vien_rel',
+        'document_incoming_id',
+        'nhan_vien_id',
         string='Người phối hợp xử lý'
     )
 
     viewers_ids = fields.Many2many(
-        'nhan_su.nhan_vien', 
-        string='Người xem để biết',
-        relation='document_incoming_viewers_rel'
+        'nhan_vien', 
+        'document_incoming_viewers_rel',
+        'document_incoming_id',
+        'nhan_vien_id',
+        string='Người xem để biết'
     )
 
     state = fields.Selection([

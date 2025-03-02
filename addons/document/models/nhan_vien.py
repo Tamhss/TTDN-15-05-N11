@@ -28,6 +28,43 @@ class NhanVien(models.Model):
     tuoi = fields.Integer(string="Tuổi", compute='_compute_tuoi', store=True)
     thang_sinh = fields.Integer(string="Tháng sinh", compute='_compute_thang_sinh', store=True)
 
+    
+    document_signed_ids = fields.One2many(
+        'document_incoming', 'signer_id',
+        string="Văn bản đã ký"
+    )
+
+    document_created_ids = fields.One2many(
+        'document_incoming', 'creator_id',
+        string="Văn bản đã nhập"
+    )
+
+    document_processed_ids = fields.One2many(
+        'document_incoming', 'processor_id',
+        string="Văn bản đang xử lý"
+    )
+
+    document_lead_ids = fields.One2many(
+        'document_incoming', 'leader_id',
+        string="Văn bản lãnh đạo chỉ đạo"
+    )
+
+    document_cooperating_ids = fields.Many2many(
+        'document_incoming', 
+        'document_incoming_cooperating_nhan_vien_rel',
+        'nhan_vien_id', 
+        'document_incoming_id',
+        string="Văn bản phối hợp xử lý"
+    )
+
+    document_viewer_ids = fields.Many2many(
+        'document_incoming', 
+        'document_incoming_viewers_rel',
+        'nhan_vien_id', 
+        'document_incoming_id',
+        string="Văn bản xem để biết"
+    )
+    
     @api.depends("ngay_sinh")
     def _compute_tuoi(self):
         today = datetime.date.today()

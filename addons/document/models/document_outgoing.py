@@ -15,11 +15,11 @@ class DocumentOutgoing(models.Model):
     document_field_id = fields.Many2one('document_field', string='Lĩnh vực')
     summary = fields.Text(string='Trích yếu', required=True)
     
-    signer_id = fields.Many2one('res.nhan_vien', string='Người ký', required=True)
+    signer_id = fields.Many2one('nhan_vien', string='Người ký', required=True)
     signer_position = fields.Char(string='Chức vụ người ký', compute='_compute_signer_position', store=True)
     
     drafting_unit_id = fields.Many2one('document_internal_department', string='Đơn vị thảo')
-    drafter_id = fields.Many2one('res.nhan_vien', string='Người soạn thảo')
+    drafter_id = fields.Many2one('nhan_vien', string='Người soạn thảo')
     
     copy_number = fields.Integer(string='Số bản')
     page_number = fields.Integer(string='Số trang')
@@ -34,7 +34,7 @@ class DocumentOutgoing(models.Model):
 
     security_level_id = fields.Many2one('document_security_level', string='Độ mật')
 
-    creator_id = fields.Many2one('res.nhan_vien', string='Người nhập', default=lambda self: self.env.user)
+    creator_id = fields.Many2one('nhan_vien', string='Người nhập', default=lambda self: self.env.user)
 
     is_reply_required = fields.Boolean(string='Là văn bản cần trả lời')
     is_qppl = fields.Boolean(string='Là văn bản QPPL')
