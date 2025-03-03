@@ -1,0 +1,39 @@
+<record id="action_document_incoming_today" model="ir.actions.act_window">
+    <field name="name">Văn bản đến trong ngày</field>
+    <field name="res_model">document_incoming</field>
+    <field name="view_mode">tree,form</field>
+    <field name="search_view_id" ref="document_incoming_filter_view"/>
+    <field name="domain">[('received_date', '=', context_today())]</field>
+</record>
+
+<record id="action_document_incoming_year" model="ir.actions.act_window">
+    <field name="name">Văn bản đến trong năm</field>
+    <field name="res_model">document_incoming</field>
+    <field name="view_mode">tree,form</field>
+    <field name="search_view_id" ref="document_incoming_filter_view"/>
+    <field name="domain">[('received_date', '>=', '{}-01-01'.format(context_today().year))]</field>
+</record>
+
+<record id="action_document_incoming_pending" model="ir.actions.act_window">
+    <field name="name">Văn bản chưa xử lý</field>
+    <field name="res_model">document_incoming</field>
+    <field name="view_mode">tree,form</field>
+    <field name="search_view_id" ref="document_incoming_filter_view"/>
+    <field name="domain">[('state', '=', 'received')]</field>
+</record>
+
+<record id="action_document_incoming_processing" model="ir.actions.act_window">
+    <field name="name">Văn bản đang xử lý</field>
+    <field name="res_model">document_incoming</field>
+    <field name="view_mode">tree,form</field>
+    <field name="search_view_id" ref="document_incoming_filter_view"/>
+    <field name="domain">[('state', '=', 'processing')]</field>
+</record>
+
+<record id="action_document_incoming_processed" model="ir.actions.act_window">
+    <field name="name">Văn bản đã xử lý</field>
+    <field name="res_model">document_incoming</field>
+    <field name="view_mode">tree,form</field>
+    <field name="search_view_id" ref="document_incoming_filter_view"/>
+    <field name="domain">[('state', '=', 'completed')]</field>
+</record>

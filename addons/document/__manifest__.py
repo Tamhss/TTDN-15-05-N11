@@ -65,6 +65,7 @@
         'views/document_security_level.xml',
         'views/document_type.xml',
         'views/document_year.xml',
+        'views/document_incoming_filter.xml',
         
         'security/ir.model.access.csv',
         'views/nhan_vien.xml',

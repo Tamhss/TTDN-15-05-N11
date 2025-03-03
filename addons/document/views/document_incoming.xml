@@ -102,6 +102,13 @@
                     <field name="signer_id"/>
                     <field name="nature"/>
                     <field name="state"/>
+                    
+                    <!-- Filters -->
+                    <filter name="today_docs" string="Văn bản đến trong ngày" domain="[('received_date', '=', context_today())]"/>
+                    <filter name="year_docs" string="Văn bản đến trong năm" domain="[('received_date', '>=', '{}-01-01'.format(context_today().year))]"/>
+                    <filter name="pending_docs" string="Văn bản chưa xử lý" domain="[('state', '=', 'pending')]"/>
+                    <filter name="processing_docs" string="Văn bản đang xử lý" domain="[('state', '=', 'in_progress')]"/>
+                    <filter name="processed_docs" string="Văn bản đã xử lý" domain="[('state', '=', 'done')]"/>
                 </search>
             </field>
         </record>

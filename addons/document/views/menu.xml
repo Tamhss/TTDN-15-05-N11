@@ -105,5 +105,46 @@
             action="action_document_report"
         />
 
+
+        <menuitem name="Tổng hợp VB đến" 
+            id="menu_document_incoming_filter" 
+            parent="menu_root" 
+            sequence="5"
+        />
+
+        <menuitem name="Tổng hợp VB đến" 
+          id="menu_document_incoming_filter" 
+          parent="menu_root" 
+          sequence="5"/>
+
+        <menuitem name="Văn bản đến trong ngày" 
+          id="menu_document_incoming_today" 
+          parent="menu_document_incoming_filter" 
+          sequence="1"
+          action="action_document_incoming_today"/>
+
+        <menuitem name="Văn bản đến trong năm" 
+          id="menu_document_incoming_year" 
+          parent="menu_document_incoming_filter" 
+          sequence="2"
+          action="action_document_incoming_year"/>
+
+        <menuitem name="Văn bản chưa xử lý" 
+          id="menu_document_incoming_pending" 
+          parent="menu_document_incoming_filter" 
+          sequence="3"
+          action="action_document_incoming_pending"/>
+
+        <menuitem name="Văn bản đang xử lý" 
+          id="menu_document_incoming_processing" 
+          parent="menu_document_incoming_filter" 
+          sequence="4"
+          action="action_document_incoming_processing"/>
+
+        <menuitem name="Văn bản đã xử lý" 
+          id="menu_document_incoming_processed" 
+          parent="menu_document_incoming_filter" 
+          sequence="5"
+          action="action_document_incoming_processed"/>
     </data>
 </odoo>

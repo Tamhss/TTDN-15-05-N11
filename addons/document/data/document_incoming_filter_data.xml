@@ -1,0 +1,24 @@
+<odoo>
+  <data noupdate="1">
+    <record id="document_filter_1" model="document_filter">
+      <field name="name">Văn bản đến trong ngày</field>
+      <field name="description">Văn bản đến trong ngày</field>
+    </record>
+    <record id="document_filter_2" model="document_filter">
+      <field name="name">Văn bản đến trong năm</field>
+      <field name="description">Văn bản đến trong năm</field>
+    </record>
+    <record id="document_filter_3" model="document_filter">
+      <field name="name">Văn bản chưa xử lý</field>
+      <field name="description">Văn bản chưa xử lý</field>
+    </record>
+    <record id="document_filter_4" model="document_filter">
+      <field name="name">Văn bản đang xử lý</field>
+      <field name="description">Văn bản đang xử lý</field>
+    </record>
+    <record id="document_filter_5" model="document_filter">
+      <field name="name">Văn bản đã xử lý</field>
+      <field name="description">Văn bản đã xử lý</field>
+    </record>
+  </data>
+</odoo>
