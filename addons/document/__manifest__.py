@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Quản lý văn bản",
+    'name': "QLVB",
 
     'summary': """Hệ thống quản lý văn bản và điều hành""",
 
