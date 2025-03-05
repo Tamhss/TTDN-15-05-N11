@@ -13,8 +13,21 @@
                             <field name="name"/>
                             <field name="short_name"/>
                             <field name="description"/>
-                            <field name="processing_deadline"/>
                         </group>
+
+                        <notebook attrs="{'invisible': [('id', '=', False)]}">
+                            <page string="Danh sách văn bản đến">
+                                <field name="document_incoming_ids">
+                                    <tree editable="bottom">
+                                        <field name="name"/>
+                                        <field name="received_date"/>
+                                        <field name="issue_date"/>
+                                        <field name="signer_id"/>
+                                        <field name="state"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>
@@ -28,7 +41,6 @@
                 <tree>
                     <field name="name"/>
                     <field name="short_name"/>
-                    <field name="processing_deadline"/>
                 </tree>
             </field>
         </record>
@@ -40,7 +52,6 @@
                 <search>
                     <field name="name"/>
                     <field name="short_name"/>
-                    <field name="processing_deadline"/>
                 </search>
             </field>
         </record>

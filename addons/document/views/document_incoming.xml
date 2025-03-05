@@ -58,9 +58,10 @@
 
                             <page string="Tệp văn bản">
                                 <group>
-                                    <field name="document_file" filename="file_name"/>
+                                    <field name="attachment_ids" widget="many2many_binary"/>
                                 </group>
                             </page>
+
                         </notebook>
 
                         <group>

@@ -40,8 +40,11 @@ class DocumentIncoming(models.Model):
 
     response_document_id = fields.Many2one('document.outgoing', string='Hồi đáp của văn bản đi')
 
-    document_file = fields.Binary(string='Tệp văn bản')
-    file_name = fields.Char(string='Tên tệp')
+    attachment_ids = fields.Many2many(
+        'ir.attachment',
+        string='Tệp đính kèm',
+        help="Chọn nhiều tệp văn bản"
+    )
 
     office_leader_id = fields.Many2one('nhan_vien', string='Lãnh đạo văn phòng')
     office_advisor_id = fields.Many2one('nhan_vien', string='Tham mưu của lãnh đạo văn phòng')
@@ -74,7 +77,7 @@ class DocumentIncoming(models.Model):
         ('pending', 'Chờ xử lý'),
         ('processing', 'Đang xử lý'),
         ('processed', 'Đã xử lý'),
-        ('rejected', 'Rejected'),
+        ('rejected', 'Từ chối'),
     ], string='Status', default='pending', tracking=True)
 
     @api.depends('signer_id')
