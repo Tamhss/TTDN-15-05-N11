@@ -31,7 +31,7 @@
                             <page string="Chi tiết">
                                 <group>
                                     <field name="summary" widget="text" required="1"/>
-                                    <field name="creator_id" readonly="1"/>
+                                    <field name="creator_id"/>
                                 </group>
                             </page>
 
@@ -75,12 +75,16 @@
             <field name="model">document_incoming</field>
             <field name="arch" type="xml">
                 <tree>
+                    <!-- Hiển thị các trường khác -->
                     <field name="incoming_number"/>
                     <field name="name"/>
                     <field name="issuing_agency_id"/>
                     <field name="received_date"/>
+                    <field name="processing_deadline"/>
+                    <field name="processor_id"/>
                     <field name="issue_date"/>
-                    <field name="signer_id"/>
+                    <field name="signer_position"/>
+                    <field name="summary"/>
                     <field name="state"/>
                 </tree>
             </field>

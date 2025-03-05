@@ -7,7 +7,7 @@ class DocumentIncoming(models.Model):
 
     name = fields.Char(string='Số / Ký hiệu', required=True, tracking=True)
     register_id = fields.Many2one('document_register', string='Sổ văn bản', required=True)
-    incoming_number = fields.Integer(string='Số đến', required=True, tracking=True)
+    incoming_number = fields.Char(string='Số đến', required=True, tracking=True, default=lambda self: self.env['ir.sequence'].next_by_code('document.incoming'))
     issuing_agency_id = fields.Many2one('document_external_agency', string='Cơ quan ban hành văn bản', required=True)
 
     received_date = fields.Date(string='Ngày đến', required=True, tracking=True)
@@ -81,5 +81,24 @@ class DocumentIncoming(models.Model):
     @api.model
     def create(self, vals):
         if 'incoming_number' not in vals or not vals['incoming_number']:
-            vals['incoming_number'] = self.env['ir.sequence'].next_by_code('document.incoming') or 'IN-00001'
+            vals['incoming_number'] = self.env['ir.sequence'].next_by_code('document.incoming')
         return super(DocumentIncoming, self).create(vals)
+    
+    @api.onchange('document_type_id', 'document_field_id', 'incoming_number')
+    def _onchange_name(self):
+        if self.document_type_id and self.document_field_id and self.incoming_number:
+            # Lấy short_name của loại văn bản và lĩnh vực
+            doc_type_short_name = self.document_type_id.short_name if self.document_type_id else ''
+            field_short_name = self.document_field_id.short_name if self.document_field_id else ''
+            
+            # Lấy số seq từ 'incoming_number' hoặc tạo mặc định mới nếu chưa có
+            seq = self.incoming_number or self.env['ir.sequence'].next_by_code('document.incoming')
+
+            if seq and seq.startswith('IN-'):
+                seq = seq[3:]
+            
+            # Cập nhật giá trị cho trường 'name'
+            self.name = f"{doc_type_short_name}-{seq}-{field_short_name}"
+        else:
+            # Nếu thiếu thông tin, đặt giá trị mặc định
+            self.name = ''

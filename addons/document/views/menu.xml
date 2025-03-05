@@ -10,21 +10,21 @@
         <menuitem name="Văn bản đi" 
             id="menu_document_outgoing" 
             parent="menu_root" 
-            sequence="1"
+            sequence="2"
             action="action_document_outgoing"
         />
 
         <menuitem name="Văn bản đến" 
             id="menu_document_incoming" 
             parent="menu_root" 
-            sequence="2"
+            sequence="3"
             action="action_document_incoming"
         />
 
         <menuitem name="Danh mục" 
             id="menu_document_category" 
             parent="menu_root" 
-            sequence="3"
+            sequence="1"
         />
 
         <!-- #region Danh mục -->
