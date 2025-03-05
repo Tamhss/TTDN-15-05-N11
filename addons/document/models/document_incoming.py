@@ -1,4 +1,5 @@
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 class DocumentIncoming(models.Model):
     _name = 'document_incoming'
@@ -7,10 +8,13 @@ class DocumentIncoming(models.Model):
 
     name = fields.Char(string='Số / Ký hiệu', required=True, tracking=True)
     register_id = fields.Many2one('document_register', string='Sổ văn bản', required=True)
-    incoming_number = fields.Char(string='Số đến', required=True, tracking=True, default=lambda self: self.env['ir.sequence'].next_by_code('document.incoming'))
+    incoming_number = fields.Char(string='Số đến', required=True, tracking=True, default=lambda self: self._get_next_incoming_number(), readonly=1)
+    document_number = fields.Char(string='Số văn bản', required=True, tracking=True)
+    document_notation = fields.Char(string='Ký hiệu', required=True, tracking=True)
     issuing_agency_id = fields.Many2one('document_external_agency', string='Cơ quan ban hành văn bản', required=True)
 
     received_date = fields.Date(string='Ngày đến', required=True, tracking=True)
+    document_year_id = fields.Many2one('document_year', string='Năm văn bản đến')
     issue_date = fields.Date(string='Ngày ban hành', required=True, tracking=True)
     summary = fields.Text(string='Trích yếu', required=True)
 
@@ -67,38 +71,61 @@ class DocumentIncoming(models.Model):
     )
 
     state = fields.Selection([
-        ('draft', 'Nháp'),
-        ('received', 'Đã nhận'),
+        ('pending', 'Chờ xử lý'),
         ('processing', 'Đang xử lý'),
-        ('completed', 'Hoàn thành')
-    ], string='Trạng thái', default='draft', tracking=True)
+        ('processed', 'Đã xử lý'),
+        ('rejected', 'Rejected'),
+    ], string='Status', default='pending', tracking=True)
 
     @api.depends('signer_id')
     def _compute_signer_position(self):
         for record in self:
             record.signer_position = record.signer_id.chuc_vu_id if record.signer_id else False
 
-    @api.model
-    def create(self, vals):
-        if 'incoming_number' not in vals or not vals['incoming_number']:
-            vals['incoming_number'] = self.env['ir.sequence'].next_by_code('document.incoming')
-        return super(DocumentIncoming, self).create(vals)
+    def _get_next_incoming_number(self):
+        last_record = self.search([], order="id desc", limit=1)
+        next_number = (int(last_record.incoming_number) + 1) if last_record and last_record.incoming_number.isdigit() else 1
+        return str(next_number)
     
-    @api.onchange('document_type_id', 'document_field_id', 'incoming_number')
-    def _onchange_name(self):
-        if self.document_type_id and self.document_field_id and self.incoming_number:
+    @api.onchange('document_type_id', 'issuing_agency_id')
+    def _onchange_document_notation(self):
+        if self.document_type_id and self.issuing_agency_id:
             # Lấy short_name của loại văn bản và lĩnh vực
             doc_type_short_name = self.document_type_id.short_name if self.document_type_id else ''
-            field_short_name = self.document_field_id.short_name if self.document_field_id else ''
-            
-            # Lấy số seq từ 'incoming_number' hoặc tạo mặc định mới nếu chưa có
-            seq = self.incoming_number or self.env['ir.sequence'].next_by_code('document.incoming')
-
-            if seq and seq.startswith('IN-'):
-                seq = seq[3:]
+            issuing_agency_short_name = self.issuing_agency_id.short_name if self.issuing_agency_id else ''
             
             # Cập nhật giá trị cho trường 'name'
-            self.name = f"{doc_type_short_name}-{seq}-{field_short_name}"
+            self.document_notation = f"{doc_type_short_name}-{issuing_agency_short_name}"
+        else:
+            # Nếu thiếu thông tin, đặt giá trị mặc định
+            self.document_notation = ''
+
+    @api.onchange('document_number', 'document_notation')
+    def _onchange_name(self):
+        if self.document_number and self.document_notation:
+            self.name = f"{self.document_number}/{self.document_notation}"
         else:
             # Nếu thiếu thông tin, đặt giá trị mặc định
             self.name = ''
+
+    @api.onchange('received_date')
+    def _onchange_received_date(self):
+        if self.received_date:
+            year = str(self.received_date.year)  # Lấy năm từ received_date
+            document_year = self.env['document_year'].search([('name', '=', year)], limit=1)
+            if document_year:
+                self.document_year_id = document_year.id
+            else:
+                self.document_year_id = False
+                raise ValidationError(f"Năm {year} chưa tồn tại trong hệ thống. Vui lòng thêm năm trước khi tiếp tục.")
+            
+    @api.constrains('received_date')
+    def _check_document_year(self):
+        for record in self:
+            if record.received_date:
+                year = str(record.received_date.year)
+                document_year = self.env['document_year'].search([('name', '=', year)], limit=1)
+                if not document_year:
+                    raise ValidationError(f"Năm {year} chưa tồn tại trong hệ thống. Vui lòng thêm năm trước khi tiếp tục.")
+                else:
+                    record.document_year_id = document_year.id

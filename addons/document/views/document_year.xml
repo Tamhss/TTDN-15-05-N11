@@ -11,11 +11,27 @@
                         <group col="4" string="Thông tin chung">
                             <field name="name"/>
                             <field name="description"/>
+                            <field name="incoming_count" readonly="1"/>
                         </group>
+
+                        <notebook attrs="{'invisible': [('id', '=', False)]}">
+                            <page string="Danh sách văn bản đến">
+                                <field name="document_incoming_ids">
+                                    <tree editable="bottom">
+                                        <field name="name"/>
+                                        <field name="received_date"/>
+                                        <field name="issue_date"/>
+                                        <field name="signer_id"/>
+                                        <field name="state"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>
         </record>
+
 
         <record id="view_document_year_tree" model="ir.ui.view">
             <field name="name">document_year_tree</field>

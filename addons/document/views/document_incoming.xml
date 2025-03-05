@@ -13,6 +13,8 @@
                                 <field name="register_id" required="1"/>
                                 <field name="incoming_number" required="1"/>
                                 <field name="name" required="1"/>
+                                <field name="document_number" required="1"/>
+                                <field name="document_notation" required="1"/>
                                 <field name="issuing_agency_id" required="1"/>
                                 <field name="received_date" required="1"/>
                                 <field name="issue_date" required="1"/>

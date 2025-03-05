@@ -18,8 +18,3 @@ class ChucVu(models.Model):
         for record in self:
             result.append((record.id, record.ten_chuc_vu))
         return result
-    
-    document_signed_position_ids = fields.One2many(
-        'document_incoming', 'signer_position',
-        string="Văn bản đã ký theo chức vụ"
-    )
