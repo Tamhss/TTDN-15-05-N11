@@ -56,12 +56,12 @@
             action="action_document_internal_department"
         />
 
-        <menuitem name="Chức vụ" 
+        <!-- <menuitem name="Chức vụ" 
             id="menu_document_job_position" 
             parent="menu_document_category" 
             sequence="5"
             action="action_document_job_position"
-        />
+        /> -->
 
         <menuitem name="Độ khẩn" 
             id="menu_document_priority_level" 
@@ -70,12 +70,12 @@
             action="action_document_priority_level"
         />
 
-        <menuitem name="Ngày lễ" 
+        <!-- <menuitem name="Ngày lễ" 
             id="menu_document_public_holiday" 
             parent="menu_document_category" 
             sequence="7"
             action="action_document_public_holiday"
-        />
+        /> -->
 
         <menuitem name="Độ mật" 
             id="menu_document_security_level" 
