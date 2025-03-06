@@ -1,5 +1,6 @@
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError
+from datetime import datetime
 
 class DocumentIncoming(models.Model):
     _name = 'document_incoming'
@@ -87,6 +88,8 @@ class DocumentIncoming(models.Model):
         ('rejected', 'Từ chối'),
     ], string='Status', default='pending', tracking=True)
 
+    processed_datetime = fields.Datetime(string='Thời gian xử lý xong')
+
     @api.depends('signer_id')
     def _compute_signer_position(self):
         for record in self:
@@ -151,3 +154,9 @@ class DocumentIncoming(models.Model):
             'target': 'new',
             'context': {'default_document_id': self.id},
         }
+    
+    @api.constrains('state', 'processed_datetime')
+    def _check_processed_date(self):
+        for record in self:
+            if record.state == 'processed' and not record.processed_datetime:
+                raise ValidationError("Bạn phải nhập ngày đã xử lý khi trạng thái là 'Đã xử lý'.")

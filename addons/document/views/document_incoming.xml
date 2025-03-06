@@ -67,6 +67,7 @@
 
                         <group>
                             <field name="state" widget="statusbar" options="{'clickable': 'true'}"/>
+                            <field name="processed_datetime" widget="datetime" attrs="{'invisible': [('state', '!=', 'processed')], 'required': [('state', '=', 'processed')]}"/>
                         </group>
                     </sheet>
                 </form>
@@ -90,8 +91,9 @@
                     <field name="signer_position"/>
                     <field name="summary"/>
                     <field name="state"/>
+                    <field name="processed_datetime"/>
                     <!-- Nút mở popup cập nhật trạng thái -->
-                    <button name="action_open_status_wizard" string="Cập nhật trạng thái" type="object" class="oe_highlight"/>
+                    <button name="action_open_status_wizard" string="Cập nhật trạng thái" type="object" class="oe_highlight" attrs="{'invisible': [('state', '=', 'processed')]}"/>
                 </tree>
             </field>
         </record>

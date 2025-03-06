@@ -1,4 +1,5 @@
 from odoo import models, fields, api
+from datetime import datetime
 
 class DocumentIncomingStatusWizard(models.TransientModel):
     _name = 'document_incoming_status_wizard'
@@ -13,6 +14,14 @@ class DocumentIncomingStatusWizard(models.TransientModel):
     ], string='Trạng thái mới', required=True)
 
     def action_update_status(self):
-        """Cập nhật trạng thái của văn bản đến"""
-        self.document_id.write({'state': self.new_state})
+        """Cập nhật trạng thái của văn bản đến và lưu thời gian nếu đã xử lý"""
+        if self.document_id:
+            updates = {'state': self.new_state}
+
+            # Nếu chọn trạng thái "Đã xử lý" và chưa có thời gian xử lý, thì lưu lại thời gian hiện tại
+            if self.new_state == 'processed' and not self.document_id.processed_datetime:
+                updates['processed_datetime'] = datetime.now()
+
+            self.document_id.write(updates)
+
         return {'type': 'ir.actions.act_window_close'}
