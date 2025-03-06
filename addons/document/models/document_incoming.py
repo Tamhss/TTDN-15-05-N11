@@ -139,3 +139,15 @@ class DocumentIncoming(models.Model):
                     raise ValidationError(f"Năm {year} chưa tồn tại trong hệ thống. Vui lòng thêm năm trước khi tiếp tục.")
                 else:
                     record.document_year_id = document_year.id
+
+    def action_open_status_wizard(self):
+        """Mở popup cập nhật trạng thái"""
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Cập nhật trạng thái',
+            'res_model': 'document_incoming_status_wizard',
+            'view_mode': 'form',
+            'view_id': self.env.ref('document.view_document_incoming_status_wizard_form').id,
+            'target': 'new',
+            'context': {'default_document_id': self.id},
+        }

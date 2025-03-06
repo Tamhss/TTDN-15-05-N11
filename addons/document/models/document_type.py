@@ -9,3 +9,4 @@ class DocumentType(models.Model):
     description = fields.Text(string='Mô tả')
 
     document_incoming_ids = fields.One2many('document_incoming', 'document_type_id', string="Văn bản đến")
+    document_outgoing_ids = fields.One2many('document_outgoing', 'document_type_id', string="Văn bản đến")
