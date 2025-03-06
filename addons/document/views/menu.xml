@@ -70,5 +70,31 @@
             action="action_document_year"
         />
         <!-- #endregion -->
+
+        
+        <menuitem name="Lịch sử xử lý" 
+            id="menu_document_history_root" 
+            parent="menu_root" 
+            sequence="4"
+        />
+
+        <!-- #region Lịch sử xử lý -->
+        <menuitem name="Văn bản đi" 
+            id="menu_document_outgoing_history" 
+            parent="menu_document_history_root" 
+            sequence="1"
+            action="action_document_outgoing_history"
+        />
+
+        <menuitem name="Văn bản đến" 
+            id="menu_document_incoming_history" 
+            parent="menu_document_history_root" 
+            sequence="2"
+            action="action_document_incoming_history"
+        />
+
+        <!-- #endregion -->
+
+
     </data>
 </odoo>

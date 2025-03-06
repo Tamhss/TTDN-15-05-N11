@@ -1,0 +1,100 @@
+<odoo>
+    <record id="view_document_outgoing_history_form" model="ir.ui.view">
+        <field name="name">document_outgoing_history_form</field>
+        <field name="model">document_outgoing_history</field>
+        <field name="arch" type="xml">
+            <form create="false" edit="false" delete="false">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="document_id" readonly="1"/>
+                            <field name="document_name" readonly="1"/>
+                            <field name="outgoing_number" readonly="1"/>
+                            <field name="document_number" readonly="1"/>
+                            <field name="document_type_id" readonly="1"/>
+                            <field name="document_field_id" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="signer_id" readonly="1"/>
+                            <field name="signer_position" readonly="1"/>
+                            <field name="signing_date" readonly="1"/>
+                            <field name="issue_date" readonly="1"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="priority_level" readonly="1"/>
+                            <field name="security_level" readonly="1"/>
+                            <field name="sending_method" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="drafting_unit_id" readonly="1"/>
+                            <field name="drafter_id" readonly="1"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="state" readonly="1"/>
+                            <field name="change_date" readonly="1"/>
+                            <field name="changed_by" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="note" readonly="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_document_outgoing_history_tree" model="ir.ui.view">
+        <field name="name">document_outgoing_history_tree</field>
+        <field name="model">document_outgoing_history</field>
+        <field name="arch" type="xml">
+            <tree create="false" edit="false" delete="false">
+                <field name="change_date"/>
+                <field name="document_name"/>
+                <field name="outgoing_number"/>
+                <field name="document_number"/>
+                <field name="document_type_id"/>
+                <field name="document_field_id"/>
+                <field name="issuing_agency_id"/>
+                <field name="signer_id"/>
+                <field name="signer_position"/>
+                <field name="signing_date"/>
+                <field name="issue_date"/>
+                <field name="priority_level"/>
+                <field name="security_level"/>
+                <field name="sending_method"/>
+                <field name="state"/>
+                <field name="changed_by"/>
+                <field name="note"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- <record id="view_document_outgoing_history_search" model="ir.ui.view">
+        <field name="name">document_outgoing.search</field>
+        <field name="model">document_outgoing</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="issuing_agency_id" required="1"/>
+                <field name="register_id"/>
+                <field name="document_type_id"/>
+                <field name="signing_date"/>
+                <field name="issue_date"/>
+                <field name="signer_id"/>
+                <field name="document_field_id"/>
+                <field name="state"/>
+            </search>
+        </field>
+    </record> -->
+
+    <record id="action_document_outgoing_history" model="ir.actions.act_window">
+        <field name="name">Lịch sử xử lý văn bản đi</field>
+        <field name="res_model">document_outgoing_history</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_document_outgoing_history_search"/>
+    </record>
+</odoo>

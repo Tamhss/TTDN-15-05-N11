@@ -162,3 +162,12 @@ class DocumentIncoming(models.Model):
         for record in self:
             if record.state == 'processed' and not record.processed_datetime:
                 raise ValidationError("Bạn phải nhập ngày đã xử lý khi trạng thái là 'Đã xử lý'.")
+      
+    def write(self, vals):
+        if 'state' in vals and vals['state'] != self.state:
+            self.env['document_incoming_history'].create({
+                'document_id': self.id,
+                'state': vals['state'],
+                'note': vals.get('leader_instruction', 'Thay đổi trạng thái'),
+            })
+        return super(DocumentIncoming, self).write(vals)

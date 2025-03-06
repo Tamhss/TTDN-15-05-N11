@@ -1,0 +1,114 @@
+<odoo>
+    <record id="view_document_incoming_history_form" model="ir.ui.view">
+        <field name="name">document_incoming_history_form</field>
+        <field name="model">document_incoming_history</field>
+        <field name="arch" type="xml">
+            <form create="0" edit="0" delete="0">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="document_id"/>
+                            <field name="document_name"/>
+                            <field name="incoming_number"/>
+                            <field name="issuing_agency_id"/>
+                            <field name="document_type_id"/>
+                            <field name="document_field_id"/>
+                        </group>
+                        <group>
+                            <field name="signer_id"/>
+                            <field name="signer_position"/>
+                            <field name="received_date"/>
+                            <field name="issue_date"/>
+                            <field name="processing_deadline"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="priority_level"/>
+                            <field name="security_level"/>
+                            <field name="receiving_method"/>
+                        </group>
+                        <group>
+                            <field name="processing_unit_id"/>
+                            <field name="processor_id"/>
+                            <field name="cooperating_unit_ids"/>
+                            <field name="cooperating_user_ids"/>
+                            <field name="viewers_ids"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="state"/>
+                            <field name="change_date"/>
+                            <field name="changed_by"/>
+                        </group>
+                        <group>
+                            <field name="note"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_document_incoming_history_tree" model="ir.ui.view">
+        <field name="name">document_incoming_history_tree</field>
+        <field name="model">document_incoming_history</field>
+        <field name="arch" type="xml">
+            <tree create="0" edit="0" delete="0">
+                <field name="change_date"/>
+                <field name="document_name"/>
+                <field name="incoming_number"/>
+                <field name="issuing_agency_id"/>
+                <field name="document_type_id"/>
+                <field name="document_field_id"/>
+                <field name="signer_id"/>
+                <field name="signer_position"/>
+                <field name="received_date"/>
+                <field name="issue_date"/>
+                <field name="processing_deadline"/>
+                <field name="priority_level"/>
+                <field name="security_level"/>
+                <field name="receiving_method"/>
+                <field name="processing_unit_id"/>
+                <field name="processor_id"/>
+                <field name="cooperating_unit_ids"/>
+                <field name="cooperating_user_ids"/>
+                <field name="viewers_ids"/>
+                <field name="state"/>
+                <field name="changed_by"/>
+                <field name="note"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- <record id="view_document_incoming_history_search" model="ir.ui.view">
+        <field name="name">document_incoming.search</field>
+        <field name="model">document_incoming</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="incoming_number"/>
+                <field name="issuing_agency_id"/>
+                <field name="received_date"/>
+                <field name="issue_date"/>
+                <field name="document_type_id"/>
+                <field name="document_field_id"/>
+                <field name="signer_id"/>
+                <field name="security_level"/>
+                <field name="priority_level"/>
+                <field name="state"/>
+            </search>
+        </field>
+    </record> -->
+
+    <record id="action_document_incoming_history" model="ir.actions.act_window">
+        <field name="name">Lịch sử xử lý văn bản đến</field>
+        <field name="res_model">document_incoming_history</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_document_incoming_history_tree"/>
+        <field name="search_view_id" ref="view_document_incoming_history_search"/>
+    </record>
+
+
+</odoo>
