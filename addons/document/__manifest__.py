@@ -49,6 +49,7 @@
         'views/document_year.xml',
 
         'views/document_incoming_status_wizard_view.xml',
+        'views/document_outgoing_status_wizard_view.xml',
         
         'views/menu.xml',
 

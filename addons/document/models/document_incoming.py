@@ -28,14 +28,16 @@ class DocumentIncoming(models.Model):
     priority_level = fields.Selection([
         ('normal', 'Bình thường'),
         ('urgent', 'Khẩn'),
-        ('very_urgent', 'Rất khẩn'),
+        ('very_urgent', 'Thượng khẩn'),
+        ('express', 'Hỏa tốc'),
     ], string='Độ khẩn', default='normal')
 
     security_level = fields.Selection([
         ('public', 'Công khai'),
         ('internal', 'Nội bộ'),
         ('confidential', 'Mật'),
-        ('top_secret', 'Tuyệt mật')
+        ('ultra_classified', 'Tuyệt mật'),
+        ('top_secret', 'Tối mật'),
     ], string='Độ mật', default='public')
 
     receiving_method = fields.Selection([
@@ -88,7 +90,7 @@ class DocumentIncoming(models.Model):
         ('rejected', 'Từ chối'),
     ], string='Status', default='pending', tracking=True)
 
-    processed_datetime = fields.Datetime(string='Thời gian xử lý xong')
+    processed_datetime = fields.Datetime(string='Ngày đã xử lý')
 
     @api.depends('signer_id')
     def _compute_signer_position(self):
