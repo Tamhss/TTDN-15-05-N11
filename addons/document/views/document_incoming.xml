@@ -24,7 +24,8 @@
                                 <field name="document_field_id"/>
                                 <field name="signer_id" required="1"/>
                                 <field name="signer_position"/>
-                                <field name="nature"/>
+                                <field name="security_level"/>
+                                <field name="priority_level"/>
                                 <field name="receiving_method"/>
                             </group>
                         </group>
@@ -107,7 +108,8 @@
                     <field name="document_type_id"/>
                     <field name="document_field_id"/>
                     <field name="signer_id"/>
-                    <field name="nature"/>
+                    <field name="security_level"/>
+                    <field name="priority_level"/>
                     <field name="state"/>
                 </search>
             </field>

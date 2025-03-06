@@ -1,20 +1,11 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_document_incoming,document_incoming.document_incoming,model_document_incoming,base.group_user,1,1,1,1
 access_document_outgoing,document_outgoing.document_outgoing,model_document_outgoing,base.group_user,1,1,1,1
-access_document_category,document_category.document_category,model_document_category,base.group_user,1,1,1,1
-access_document_sign,document_sign.document_sign,model_document_sign,base.group_user,1,1,1,1
-access_document_workflow,document_workflow.document_workflow,model_document_workflow,base.group_user,1,1,1,1
-access_document_report,document_report.document_report,model_document_report,base.group_user,1,1,1,1
-
 access_document_agency_level,document_agency_level.document_agency_level,model_document_agency_level,base.group_user,1,1,1,1
 access_document_external_agency,document_external_agency.document_external_agency,model_document_external_agency,base.group_user,1,1,1,1
 access_document_field,document_field.document_field,model_document_field,base.group_user,1,1,1,1
 access_document_internal_department,document_internal_department.document_internal_department,model_document_internal_department,base.group_user,1,1,1,1
-access_document_job_position,document_job_position.document_job_position,model_document_job_position,base.group_user,1,1,1,1
-access_document_priority_level,document_priority_level.document_priority_level,model_document_priority_level,base.group_user,1,1,1,1
-access_document_public_holiday,document_public_holiday.document_public_holiday,model_document_public_holiday,base.group_user,1,1,1,1
 access_document_register,document_register.document_register,model_document_register,base.group_user,1,1,1,1
-access_document_security_level,document_security_level.document_security_level,model_document_security_level,base.group_user,1,1,1,1
 access_document_type,document_type.document_type,model_document_type,base.group_user,1,1,1,1
 access_document_year,document_year.document_year,model_document_year,base.group_user,1,1,1,1
 

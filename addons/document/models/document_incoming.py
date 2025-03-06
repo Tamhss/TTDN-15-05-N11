@@ -24,11 +24,18 @@ class DocumentIncoming(models.Model):
     signer_id = fields.Many2one('nhan_vien', string='Người ký', required=True)
     signer_position = fields.Many2one('chuc_vu', string='Chức vụ người ký', compute='_compute_signer_position', store=True)
 
-    nature = fields.Selection([
-        ('urgent', 'Khẩn cấp'),
+    priority_level = fields.Selection([
         ('normal', 'Bình thường'),
-        ('confidential', 'Mật')
-    ], string='Tính chất văn bản')
+        ('urgent', 'Khẩn'),
+        ('very_urgent', 'Rất khẩn'),
+    ], string='Độ khẩn', default='normal')
+
+    security_level = fields.Selection([
+        ('public', 'Công khai'),
+        ('internal', 'Nội bộ'),
+        ('confidential', 'Mật'),
+        ('top_secret', 'Tuyệt mật')
+    ], string='Độ mật', default='public')
 
     receiving_method = fields.Selection([
         ('email', 'Email'),

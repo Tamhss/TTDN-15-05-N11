@@ -38,9 +38,9 @@
                             
                             <page string="Gửi văn bản">
                                 <group>
-                                    <field name="priority_level_id"/>
+                                    <field name="priority_level"/>
                                     <field name="sending_method"/>
-                                    <field name="security_level_id"/>
+                                    <field name="security_level"/>
                                     <field name="copy_number"/>
                                     <field name="page_number"/>
                                     <field name="archive_number"/>

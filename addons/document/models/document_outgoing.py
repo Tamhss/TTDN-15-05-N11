@@ -29,14 +29,25 @@ class DocumentOutgoing(models.Model):
     page_number = fields.Integer(string='Số trang')
     archive_number = fields.Integer(string='Số bản lưu')
 
-    priority_level_id = fields.Many2one('document_priority_level', string='Độ khẩn')
+    priority_level = fields.Selection([
+        ('normal', 'Bình thường'),
+        ('urgent', 'Khẩn'),
+        ('very_urgent', 'Rất khẩn'),
+    ], string='Độ khẩn', default='normal')
+    
+    security_level = fields.Selection([
+        ('public', 'Công khai'),
+        ('internal', 'Nội bộ'),
+        ('confidential', 'Mật'),
+        ('top_secret', 'Tuyệt mật')
+    ], string='Độ mật', default='public')
+
+
     sending_method = fields.Selection([
         ('email', 'Email'),
         ('post', 'Bưu điện'),
         ('direct', 'Gửi trực tiếp'),
     ], string='Phương thức gửi')
-
-    security_level_id = fields.Many2one('document_security_level', string='Độ mật')
 
     creator_id = fields.Many2one('nhan_vien', string='Người nhập')
 
