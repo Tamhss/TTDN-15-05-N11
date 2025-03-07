@@ -53,7 +53,6 @@
         'views/phong_ban.xml',
         'views/chuc_vu.xml',
         'views/chung_chi.xml',
-        'views/lich_su_cong_tac.xml',
 
         'views/document_incoming_status_wizard_view.xml',
         'views/document_outgoing_status_wizard_view.xml',
