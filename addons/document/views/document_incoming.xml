@@ -77,7 +77,7 @@
                                     <p class="card-text">
                                         <field name="state" widget="statusbar" options="{'clickable': 'true'}"/>
                                     </p>
-                                <div class="row">
+                                <div class="row d-flex justify-content-center">
                                     <div class="col-12">
                                         <field name="processed_datetime" widget="datetime" class="o_field_widget"
                                             attrs="{'invisible': [('state', '!=', 'processed')], 'required': [('state', '=', 'processed')]}"/>
@@ -90,6 +90,29 @@
 
                     </sheet>
                 </form>
+            </field>
+        </record>
+
+        <record id="view_document_incoming_tree" model="ir.ui.view">
+            <field name="name">document_incoming.tree</field>
+            <field name="model">document_incoming</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <!-- Hiển thị các trường khác -->
+                    <field name="incoming_number"/>
+                    <field name="name"/>
+                    <field name="issuing_agency_id"/>
+                    <field name="received_date"/>
+                    <field name="processing_deadline"/>
+                    <field name="processor_id"/>
+                    <field name="issue_date"/>
+                    <field name="signer_position"/>
+                    <field name="summary"/>
+                    <field name="state"/>
+                    <field name="processed_datetime"/>
+                    <!-- Nút mở popup cập nhật trạng thái -->
+                    <button name="action_open_status_wizard" string="Cập nhật trạng thái" type="object" class="oe_highlight" attrs="{'invisible': [('state', '=', 'processed')]}"/>
+                </tree>
             </field>
         </record>
 

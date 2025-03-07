@@ -86,16 +86,18 @@
             <field name="name">document_outgoing.tree</field>
             <field name="model">document_outgoing</field>
             <field name="arch" type="xml">
-                <tree string="Văn bản đi">
-                    <field name="document_number"/>
+                <tree>
                     <field name="name"/>
-                    <field name="document_notation"/>
-                    <field name="issuing_agency_id"/>
+                    <field name="issuing_agency_id" required="1"/>
+                    <field name="register_id"/>
                     <field name="document_type_id"/>
                     <field name="signing_date"/>
                     <field name="issue_date"/>
                     <field name="signer_id"/>
-                    <field name="state" widget="statusbar"/>
+                    <field name="state"/>
+                    <field name="processed_datetime"/>
+                    <!-- Nút mở popup cập nhật trạng thái -->
+                    <button name="action_open_status_wizard" string="Cập nhật trạng thái" type="object" class="oe_highlight" attrs="{'invisible': [('state', '=', 'processed')]}"/>
                 </tree>
             </field>
         </record>
