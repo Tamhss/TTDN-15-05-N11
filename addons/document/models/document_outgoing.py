@@ -6,11 +6,25 @@ class DocumentOutgoing(models.Model):
     _description = 'Văn bản đi'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
-    name = fields.Char(string='Số, ký hiệu', required=True, tracking=True)
+    name = fields.Char(
+        string='Số, ký hiệu', 
+        required=True, 
+        tracking=True, 
+        compute='_compute_name', 
+        store=True, 
+        readonly=True
+    )
     out_number = fields.Char(string='Số đi', required=True, tracking=True, default=lambda self: self._get_next_out_number(), readonly=1)
     outgoing_number = fields.Integer(string='Số văn bản đi', tracking=True)
     document_number = fields.Char(string='Số văn bản', required=True, tracking=True)
-    document_notation = fields.Char(string='Ký hiệu', required=True, tracking=True)
+    document_notation = fields.Char(
+        string='Ký hiệu',
+        required=True,
+        tracking=True,
+        compute='_compute_document_notation',
+        store=True,
+        readonly=True
+    )
     register_id = fields.Many2one('document_register', string='Sổ văn bản đi', required=True)
     document_type_id = fields.Many2one('document_type', string='Loại văn bản', required=True)
     signing_date = fields.Date(string='Ngày ký', required=True)
@@ -84,26 +98,23 @@ class DocumentOutgoing(models.Model):
             next_number = 1
         return str(next_number)
     
-    @api.onchange('document_type_id', 'issuing_agency_id')
-    def _onchange_document_notation(self):
-        if self.document_type_id and self.issuing_agency_id:
-            # Lấy short_name của loại văn bản và lĩnh vực
-            doc_type_short_name = self.document_type_id.short_name if self.document_type_id else ''
-            issuing_agency_short_name = self.issuing_agency_id.short_name if self.issuing_agency_id else ''
-            
-            # Cập nhật giá trị cho trường 'name'
-            self.document_notation = f"{doc_type_short_name}-{issuing_agency_short_name}"
-        else:
-            # Nếu thiếu thông tin, đặt giá trị mặc định
-            self.document_notation = ''
+    @api.depends('document_type_id', 'issuing_agency_id')
+    def _compute_document_notation(self):
+        for record in self:
+            if record.document_type_id and record.issuing_agency_id:
+                doc_type_short_name = record.document_type_id.short_name if record.document_type_id else ''
+                issuing_agency_short_name = record.issuing_agency_id.short_name if record.issuing_agency_id else ''
+                record.document_notation = f"{doc_type_short_name}-{issuing_agency_short_name}"
+            else:
+                record.document_notation = ''
 
-    @api.onchange('document_number', 'document_notation')
-    def _onchange_name(self):
-        if self.document_number and self.document_notation:
-            self.name = f"{self.document_number}/{self.document_notation}"
-        else:
-            # Nếu thiếu thông tin, đặt giá trị mặc định
-            self.name = ''
+    @api.depends('document_number', 'document_notation')
+    def _compute_name(self):
+        for record in self:
+            if record.document_number and record.document_notation:
+                record.name = f"{record.document_number}/{record.document_notation}"
+            else:
+                record.name = ''
 
     @api.onchange('signing_date')
     def _onchange_received_date(self):

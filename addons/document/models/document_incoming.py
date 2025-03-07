@@ -11,7 +11,14 @@ class DocumentIncoming(models.Model):
     register_id = fields.Many2one('document_register', string='Sổ văn bản', required=True)
     incoming_number = fields.Char(string='Số đến', required=True, tracking=True, default=lambda self: self._get_next_incoming_number(), readonly=1)
     document_number = fields.Char(string='Số văn bản', required=True, tracking=True)
-    document_notation = fields.Char(string='Ký hiệu', required=True, tracking=True)
+    document_notation = fields.Char(
+        string='Ký hiệu',
+        required=True,
+        tracking=True,
+        compute='_compute_document_notation',
+        store=True,
+        readonly=True
+    )
     issuing_agency_id = fields.Many2one('document_external_agency', string='Cơ quan ban hành văn bản', required=True)
 
     received_date = fields.Date(string='Ngày đến', required=True, tracking=True)
@@ -102,18 +109,15 @@ class DocumentIncoming(models.Model):
         next_number = (int(last_record.incoming_number) + 1) if last_record and last_record.incoming_number.isdigit() else 1
         return str(next_number)
     
-    @api.onchange('document_type_id', 'issuing_agency_id')
-    def _onchange_document_notation(self):
-        if self.document_type_id and self.issuing_agency_id:
-            # Lấy short_name của loại văn bản và lĩnh vực
-            doc_type_short_name = self.document_type_id.short_name if self.document_type_id else ''
-            issuing_agency_short_name = self.issuing_agency_id.short_name if self.issuing_agency_id else ''
-            
-            # Cập nhật giá trị cho trường 'name'
-            self.document_notation = f"{doc_type_short_name}-{issuing_agency_short_name}"
-        else:
-            # Nếu thiếu thông tin, đặt giá trị mặc định
-            self.document_notation = ''
+    @api.depends('document_type_id', 'issuing_agency_id')
+    def _compute_document_notation(self):
+        for record in self:
+            if record.document_type_id and record.issuing_agency_id:
+                doc_type_short_name = record.document_type_id.short_name if record.document_type_id else ''
+                issuing_agency_short_name = record.issuing_agency_id.short_name if record.issuing_agency_id else ''
+                record.document_notation = f"{doc_type_short_name}-{issuing_agency_short_name}"
+            else:
+                record.document_notation = ''
 
     @api.onchange('document_number', 'document_notation')
     def _onchange_name(self):
