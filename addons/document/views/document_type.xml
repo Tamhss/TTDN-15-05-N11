@@ -13,8 +13,32 @@
                             <field name="name"/>
                             <field name="short_name"/>
                             <field name="description"/>
-                            <field name="processing_deadline"/>
                         </group>
+
+                        <notebook attrs="{'invisible': [('id', '=', False)]}">
+                            <page string="Danh sách văn bản đến">
+                                <field name="document_incoming_ids">
+                                    <tree create="false" delete="false" editable="false">
+                                        <field name="name"/>
+                                        <field name="received_date"/>
+                                        <field name="issue_date"/>
+                                        <field name="signer_id"/>
+                                        <field name="state"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Danh sách văn bản đi">
+                                <field name="document_outgoing_ids">
+                                    <tree create="false" delete="false" editable="false">
+                                        <field name="name"/>
+                                        <field name="signing_date"/>
+                                        <field name="issue_date"/>
+                                        <field name="signer_id"/>
+                                        <field name="state"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>
@@ -28,7 +52,6 @@
                 <tree>
                     <field name="name"/>
                     <field name="short_name"/>
-                    <field name="processing_deadline"/>
                 </tree>
             </field>
         </record>
@@ -40,7 +63,6 @@
                 <search>
                     <field name="name"/>
                     <field name="short_name"/>
-                    <field name="processing_deadline"/>
                 </search>
             </field>
         </record>

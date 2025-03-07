@@ -1,0 +1,18 @@
+<odoo>
+    <record id="view_document_incoming_status_wizard_form" model="ir.ui.view">
+        <field name="name">document_incoming_status_wizard_form</field>
+        <field name="model">document_incoming_status_wizard</field>
+        <field name="arch" type="xml">
+            <form string="Cập nhật trạng thái">
+                <group>
+                    <field name="document_id" readonly="1"/>
+                    <field name="new_state" required="1"/>
+                </group>
+                <footer>
+                    <button name="action_update_status" string="Lưu" type="object" class="oe_highlight"/>
+                    <button string="Hủy" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

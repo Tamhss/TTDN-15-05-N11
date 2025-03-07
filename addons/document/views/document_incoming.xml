@@ -13,6 +13,8 @@
                                 <field name="register_id" required="1"/>
                                 <field name="incoming_number" required="1"/>
                                 <field name="name" required="1"/>
+                                <field name="document_number" required="1"/>
+                                <field name="document_notation" required="1"/>
                                 <field name="issuing_agency_id" required="1"/>
                                 <field name="received_date" required="1"/>
                                 <field name="issue_date" required="1"/>
@@ -22,7 +24,8 @@
                                 <field name="document_field_id"/>
                                 <field name="signer_id" required="1"/>
                                 <field name="signer_position"/>
-                                <field name="nature"/>
+                                <field name="security_level"/>
+                                <field name="priority_level"/>
                                 <field name="receiving_method"/>
                             </group>
                         </group>
@@ -31,7 +34,7 @@
                             <page string="Chi tiết">
                                 <group>
                                     <field name="summary" widget="text" required="1"/>
-                                    <field name="creator_id" readonly="1"/>
+                                    <field name="creator_id"/>
                                 </group>
                             </page>
 
@@ -56,13 +59,15 @@
 
                             <page string="Tệp văn bản">
                                 <group>
-                                    <field name="document_file" filename="file_name"/>
+                                    <field name="attachment_ids" widget="many2many_binary"/>
                                 </group>
                             </page>
+
                         </notebook>
 
                         <group>
                             <field name="state" widget="statusbar" options="{'clickable': 'true'}"/>
+                            <field name="processed_datetime" widget="datetime" attrs="{'invisible': [('state', '!=', 'processed')], 'required': [('state', '=', 'processed')]}"/>
                         </group>
                     </sheet>
                 </form>
@@ -75,13 +80,20 @@
             <field name="model">document_incoming</field>
             <field name="arch" type="xml">
                 <tree>
+                    <!-- Hiển thị các trường khác -->
                     <field name="incoming_number"/>
                     <field name="name"/>
                     <field name="issuing_agency_id"/>
                     <field name="received_date"/>
+                    <field name="processing_deadline"/>
+                    <field name="processor_id"/>
                     <field name="issue_date"/>
-                    <field name="signer_id"/>
+                    <field name="signer_position"/>
+                    <field name="summary"/>
                     <field name="state"/>
+                    <field name="processed_datetime"/>
+                    <!-- Nút mở popup cập nhật trạng thái -->
+                    <button name="action_open_status_wizard" string="Cập nhật trạng thái" type="object" class="oe_highlight" attrs="{'invisible': [('state', '=', 'processed')]}"/>
                 </tree>
             </field>
         </record>
@@ -100,7 +112,8 @@
                     <field name="document_type_id"/>
                     <field name="document_field_id"/>
                     <field name="signer_id"/>
-                    <field name="nature"/>
+                    <field name="security_level"/>
+                    <field name="priority_level"/>
                     <field name="state"/>
                     
                     <!-- Filters -->
