@@ -9,6 +9,7 @@
                         <group>
                             <field name="document_id" readonly="1"/>
                             <field name="document_name" readonly="1"/>
+                            <field name="out_number" readonly="1"/>
                             <field name="outgoing_number" readonly="1"/>
                             <field name="document_number" readonly="1"/>
                             <field name="document_type_id" readonly="1"/>

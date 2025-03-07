@@ -7,6 +7,7 @@ class DocumentOutgoing(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(string='Số, ký hiệu', required=True, tracking=True)
+    out_number = fields.Char(string='Số đi', required=True, tracking=True, default=lambda self: self._get_next_out_number(), readonly=1)
     outgoing_number = fields.Integer(string='Số văn bản đi', tracking=True)
     document_number = fields.Char(string='Số văn bản', required=True, tracking=True)
     document_notation = fields.Char(string='Ký hiệu', required=True, tracking=True)
@@ -75,9 +76,12 @@ class DocumentOutgoing(models.Model):
         for record in self:
             record.signer_position = record.signer_id.chuc_vu_id if record.signer_id else False
 
-    def _get_next_outgoing_number(self):
+    def _get_next_out_number(self):
         last_record = self.search([], order="id desc", limit=1)
-        next_number = (int(last_record.outgoing_number) + 1) if last_record and last_record.outgoing_number.isdigit() else 1
+        if last_record and isinstance(last_record.out_number, str) and last_record.out_number.isdigit():
+            next_number = int(last_record.out_number) + 1
+        else:
+            next_number = 1
         return str(next_number)
     
     @api.onchange('document_type_id', 'issuing_agency_id')
@@ -149,3 +153,13 @@ class DocumentOutgoing(models.Model):
                 'note': vals.get('leader_instruction', 'Thay đổi trạng thái'),
             })
         return super(DocumentOutgoing, self).write(vals)
+    
+    @api.model
+    def create(self, vals):
+        record = super(DocumentOutgoing, self).create(vals)
+        self.env['document_outgoing_history'].create({
+            'document_id': record.id,
+            'state': record.state,
+            'note': 'Khởi tạo văn bản',
+        })
+        return record

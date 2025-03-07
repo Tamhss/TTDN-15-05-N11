@@ -171,3 +171,13 @@ class DocumentIncoming(models.Model):
                 'note': vals.get('leader_instruction', 'Thay đổi trạng thái'),
             })
         return super(DocumentIncoming, self).write(vals)
+    
+    @api.model
+    def create(self, vals):
+        record = super(DocumentIncoming, self).create(vals)
+        self.env['document_incoming_history'].create({
+            'document_id': record.id,
+            'state': record.state,
+            'note': 'Khởi tạo văn bản',
+        })
+        return record
