@@ -8,93 +8,88 @@
             <field name="arch" type="xml">
                 <form string="Văn bản đến">
                     <sheet>
-                        <group>
-                            <group>
-                                <field name="register_id" required="1"/>
-                                <field name="incoming_number" required="1"/>
-                                <field name="name" required="1"/>
-                                <field name="document_number" required="1"/>
-                                <field name="document_notation" required="1"/>
-                                <field name="issuing_agency_id" required="1"/>
-                                <field name="received_date" required="1"/>
-                                <field name="issue_date" required="1"/>
+                        <div class="bg-light p-3 border border-primary rounded">
+                            <group class="bg-light p-3 border-primary">
+                                <group>
+                                    <field name="register_id" required="1"/>
+                                    <field name="incoming_number" required="1"/>
+                                    <field name="name" required="1"/>
+                                    <field name="document_number" required="1"/>
+                                    <field name="document_notation" required="1"/>
+                                    <field name="issuing_agency_id" required="1"/>
+                                    <field name="received_date" required="1"/>
+                                    <field name="issue_date" required="1"/>
+                                </group>
+                                <group>
+                                    <field name="document_type_id" required="1"/>
+                                    <field name="document_field_id"/>
+                                    <field name="signer_id" required="1"/>
+                                    <field name="signer_position"/>
+                                    <field name="security_level"/>
+                                    <field name="priority_level"/>
+                                    <field name="receiving_method"/>
+                                </group>
                             </group>
-                            <group>
-                                <field name="document_type_id" required="1"/>
-                                <field name="document_field_id"/>
-                                <field name="signer_id" required="1"/>
-                                <field name="signer_position"/>
-                                <field name="security_level"/>
-                                <field name="priority_level"/>
-                                <field name="receiving_method"/>
-                            </group>
-                        </group>
-
+                        </div>
                         <notebook>
-                            <page string="Chi tiết">
-                                <group>
-                                    <field name="summary" widget="text" required="1"/>
-                                    <field name="creator_id"/>
-                                </group>
-                            </page>
-
-                            <page string="Xử lý">
-                                <group>
+                            <page string="📌 Chi tiết">
+                                <div class="bg-light p-3 border border-primary rounded">
                                     <group>
-                                        <field name="office_leader_id"/>
-                                        <field name="office_advisor_id"/>
-                                        <field name="leader_id"/>
-                                        <field name="leader_instruction"/>
+                                        <field name="summary" widget="text" required="1"/>
+                                        <field name="creator_id"/>
                                     </group>
+                                </div>
+                            </page>
+                            <page string="⚡ Xử lý">
+                                <div class="bg-light p-3 border border-primary rounded">
                                     <group>
-                                        <field name="processing_unit_id"/>
-                                        <field name="processing_deadline"/>
-                                        <field name="processor_id"/>
-                                        <field name="cooperating_unit_ids" widget="many2many_tags"/>
-                                        <field name="cooperating_user_ids" widget="many2many_tags"/>
-                                        <field name="viewers_ids" widget="many2many_tags"/>
+                                        <group>
+                                            <field name="office_leader_id"/>
+                                            <field name="office_advisor_id"/>
+                                            <field name="leader_id"/>
+                                            <field name="leader_instruction"/>
+                                        </group>
+                                        <group>
+                                            <field name="processing_unit_id"/>
+                                            <field name="processing_deadline"/>
+                                            <field name="processor_id"/>
+                                            <field name="cooperating_unit_ids" widget="many2many_tags"/>
+                                            <field name="cooperating_user_ids" widget="many2many_tags"/>
+                                            <field name="viewers_ids" widget="many2many_tags"/>
+                                        </group>
                                     </group>
-                                </group>
+                                </div>
                             </page>
-
-                            <page string="Tệp văn bản">
-                                <group>
-                                    <field name="attachment_ids" widget="many2many_binary"/>
-                                </group>
+                            <page string="📂 Tệp văn bản">
+                                <div class="bg-light p-3 border border-primary rounded">
+                                    <group class="bg-light p-3 border">
+                                        <field name="attachment_ids" widget="many2many_binary"/>
+                                    </group>
+                                </div>
                             </page>
-
                         </notebook>
-
-                        <group>
-                            <field name="state" widget="statusbar" options="{'clickable': 'true'}"/>
-                            <field name="processed_datetime" widget="datetime" attrs="{'invisible': [('state', '!=', 'processed')], 'required': [('state', '=', 'processed')]}"/>
+                        <group class="mt-3 col-6">
+                            <div class="card border-primary shadow-sm">
+                                <div class="card-body">
+                                    <h5 class="card-title text-primary">
+                                        <i class="bi bi-info-circle"></i> Trạng thái
+                                    </h5>
+                                    <p class="card-text">
+                                        <field name="state" widget="statusbar" options="{'clickable': 'true'}"/>
+                                    </p>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <field name="processed_datetime" widget="datetime" class="o_field_widget"
+                                            attrs="{'invisible': [('state', '!=', 'processed')], 'required': [('state', '=', 'processed')]}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </group>
+
+
                     </sheet>
                 </form>
-            </field>
-        </record>
-
-        <!-- Tree View -->
-        <record id="view_document_incoming_tree" model="ir.ui.view">
-            <field name="name">document_incoming.tree</field>
-            <field name="model">document_incoming</field>
-            <field name="arch" type="xml">
-                <tree>
-                    <!-- Hiển thị các trường khác -->
-                    <field name="incoming_number"/>
-                    <field name="name"/>
-                    <field name="issuing_agency_id"/>
-                    <field name="received_date"/>
-                    <field name="processing_deadline"/>
-                    <field name="processor_id"/>
-                    <field name="issue_date"/>
-                    <field name="signer_position"/>
-                    <field name="summary"/>
-                    <field name="state"/>
-                    <field name="processed_datetime"/>
-                    <!-- Nút mở popup cập nhật trạng thái -->
-                    <button name="action_open_status_wizard" string="Cập nhật trạng thái" type="object" class="oe_highlight" attrs="{'invisible': [('state', '=', 'processed')]}"/>
-                </tree>
             </field>
         </record>
 
@@ -104,22 +99,23 @@
             <field name="model">document_incoming</field>
             <field name="arch" type="xml">
                 <search>
-                    <field name="name"/>
-                    <field name="incoming_number"/>
-                    <field name="issuing_agency_id"/>
-                    <field name="received_date"/>
-                    <field name="issue_date"/>
-                    <field name="document_type_id"/>
-                    <field name="document_field_id"/>
-                    <field name="signer_id"/>
-                    <field name="security_level"/>
-                    <field name="priority_level"/>
-                    <field name="state"/>
+                    <group>
+                        <field name="name"/>
+                        <field name="incoming_number"/>
+                        <field name="issuing_agency_id"/>
+                        <field name="received_date"/>
+                        <field name="issue_date"/>
+                        <field name="document_type_id"/>
+                        <field name="document_field_id"/>
+                        <field name="signer_id"/>
+                        <field name="security_level"/>
+                        <field name="priority_level"/>
+                        <field name="state"/>
+                    </group>
                 </search>
             </field>
         </record>
-
-        <!-- Action Window -->
+        
         <record id="action_document_incoming" model="ir.actions.act_window">
             <field name="name">Văn bản đến</field>
             <field name="res_model">document_incoming</field>

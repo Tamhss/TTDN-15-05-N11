@@ -106,8 +106,8 @@
         <field name="name">Lịch sử xử lý văn bản đến</field>
         <field name="res_model">document_incoming_history</field>
         <field name="view_mode">tree,form</field>
-        <field name="view_id" ref="view_document_incoming_history_tree"/>
-        <field name="search_view_id" ref="view_document_incoming_history_search"/>
+        <!-- <field name="view_id" ref="view_document_incoming_history_tree"/>
+        <field name="search_view_id" ref="view_document_incoming_history_search"/> -->
     </record>
 
 

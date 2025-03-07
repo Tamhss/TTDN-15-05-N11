@@ -95,6 +95,6 @@
         <field name="name">Lịch sử xử lý văn bản đi</field>
         <field name="res_model">document_outgoing_history</field>
         <field name="view_mode">tree,form</field>
-        <field name="search_view_id" ref="view_document_outgoing_history_search"/>
+        <!-- <field name="search_view_id" ref="view_document_outgoing_history_search"/> -->
     </record>
 </odoo>
