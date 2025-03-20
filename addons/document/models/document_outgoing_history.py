@@ -18,8 +18,7 @@ class DocumentOutgoingHistory(models.Model):
 
     # **Thông tin từ document_outgoing (Chỉ hiển thị, không lưu vào database)**
     document_name = fields.Char(string="Số/Ký hiệu", related="document_id.name", store=False)
-    out_number = fields.Char(string="Số đi", related="document_id.out_number", store=False)
-    outgoing_number = fields.Integer(string="Số văn bản đi", related="document_id.outgoing_number", store=False)
+    outgoing_number = fields.Char(string="Số văn bản đi", related="document_id.out_number", store=False)
     document_number = fields.Char(string="Số văn bản", related="document_id.document_number", store=False)
     document_notation = fields.Char(string="Ký hiệu", related="document_id.document_notation", store=False)
     document_type_id = fields.Many2one('document_type', string="Loại văn bản", related="document_id.document_type_id", store=False)
