@@ -35,7 +35,7 @@
                                 <div class="bg-light p-3 border border-primary rounded">
                                     <group>
                                         <field name="summary" widget="text" required="1"/>
-                                        <field name="creator_id" readonly="1"/>
+                                        <field name="creator_id"/>
                                     </group>
                                 </div>
                             </page>
@@ -88,6 +88,7 @@
             <field name="model">document_outgoing</field>
             <field name="arch" type="xml">
                 <tree>
+                    <field name="out_number"/>
                     <field name="name"/>
                     <field name="issuing_agency_id" required="1"/>
                     <field name="register_id"/>
