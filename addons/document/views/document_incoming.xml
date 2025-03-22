@@ -12,6 +12,7 @@
                             <group class="bg-light p-3 border-primary">
                                 <group>
                                     <field name="register_id" required="1"/>
+                                    <field name="name" required="1"/>
                                     <field name="incoming_number" required="1"/>
                                     <field name="document_number" required="1"/>
                                     <field name="document_type_id" required="1"/>
