@@ -5,6 +5,7 @@ class DocumentOutgoing(models.Model):
     _name = 'document_outgoing'
     _description = 'Văn bản đi'
     _inherit = ['mail.thread', 'mail.activity.mixin']
+    _order = "out_number desc"
 
     name = fields.Char(string='Số, ký hiệu', required=True, tracking=True)
     out_number = fields.Char(string='Số đi', required=True, tracking=True, default=lambda self: self._get_next_out_number(), readonly=1)

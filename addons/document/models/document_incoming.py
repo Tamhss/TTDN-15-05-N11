@@ -6,6 +6,7 @@ class DocumentIncoming(models.Model):
     _name = 'document_incoming'
     _description = 'Văn bản đến'
     _inherit = ['mail.thread', 'mail.activity.mixin']
+    _order = "incoming_number desc"
 
     name = fields.Char(string='Số / Ký hiệu', required=True, tracking=True)
     register_id = fields.Many2one('document_register', string='Sổ văn bản', required=True)
