@@ -68,5 +68,5 @@ Ngoài ra có thể thêm mổ số parameters như:
 
 Người sử dụng truy cập theo đường dẫn _http://localhost:8069/_ để đăng nhập vào hệ thống.
 
-Hoàn tất nhé Tâm Đần
+![POSTER_N11_CNTT1505](./POSTER_N11_CNTT1505.jpg)
     
